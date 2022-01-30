@@ -1,12 +1,12 @@
 .wpp-icon{
     display: flex;
     align-items: center;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 .mail-icon{
     display: flex;
     align-items: center;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 .imput-username{
     margin-right: 5px;
@@ -173,7 +173,7 @@
 
 #skill-title{
     font-family: "Poppins", sans-serif;
-    width: 60px;
+    width: 145px;
     margin-left: 30px;
     margin-right: 10px;
     display: flex;

@@ -1,24 +1,28 @@
 <div id="skills" class="card border-dark mb-3" style="max-width: 80rem;">
     <h4 class="card-title-skills">Hard & Soft Skills:</h4>
 
-
-<div id="skills-data">
-     
-    <div id="word-icon">
-      <i class="fas fa-file-word fa-3x"></i>
+<ul *ngFor="let skill of skillsInfo">
+  <li>
+    <div id="skills-data" >
+       
+      <div id="word-icon">
+        <i class="fas fa-file-word fa-3x"></i>
+      </div>
+  
+      <div id="skill-title">
+      <h5>{{ skill.nombre }}</h5>
+      </div>
+  
+    <div class="progress" style="height: 30px; width: 50%;">
+       <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">{{skill.valorText}}</div>
     </div>
 
-    <div id="skill-title">
-    <h5>Word:</h5>
+    <br>
     </div>
 
-  <div class="progress" style="height: 30px; width: 50%;">
-     <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
-  </div>
-
+  </li>
+</ul>
 </div>
 
-<br>
 
 
-</div>

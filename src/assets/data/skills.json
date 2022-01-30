@@ -1,0 +1,19 @@
+{
+    "skills": [
+        {
+            "nombre": "Microsoft Office",
+            "valor": "90%",
+            "valorText": "100%"
+        },
+        {
+            "nombre": "Responsabilidad",
+            "valor": "100%",
+            "valorText": "100%"
+        },
+        {
+            "nombre": "Paciencia",
+            "valor": "100%",
+            "valorText": "100%"
+        }
+    ]
+}
