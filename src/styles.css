@@ -1,13 +1,20 @@
-.wpp-icon{
+#wpp-icon{
     display: flex;
     align-items: center;
-    margin-right: 20px;
+    margin-right: 15px;
 }
-.mail-icon{
+#mail-icon{
     display: flex;
     align-items: center;
-    margin-right: 20px;
+    margin-right: 10px;
 }
+
+#linkedin-icon{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
 .imput-username{
     margin-right: 5px;
 }
@@ -70,26 +77,16 @@
     font-family: "Poppins", sans-serif; 
 }
 
-#acerca-de i{
-    position: absolute;
-    top: 5px;
-}
-
-#educacion i{
-    position: absolute;
-    top: 5px;
-}
-
-#experiencia i{
-    position: absolute;
-    top: 5px;
-}
 
 #plus{
+    position: absolute;
     right: 35px;
+    top: 5px;
 }
 
 #edit{
+    position: absolute;
+    top: 5px;
     right: 5px;
 }
 
