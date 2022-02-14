@@ -1,19 +1,19 @@
 {
     "skills": [
         {
-            "nombre": "Microsoft Office",
-            "valor": "90%",
-            "valorText": "100%"
+            "nombre": "Microsoft Office:",
+            "valor": "--bar-value:13%;",
+            "valorNum": "13"
         },
         {
-            "nombre": "Responsabilidad",
-            "valor": "100%",
-            "valorText": "100%"
+            "nombre": "HTML:",
+            "valor": "--bar-value:45%;",
+            "valorNum": "45"
         },
         {
-            "nombre": "Paciencia",
-            "valor": "100%",
-            "valorText": "100%"
+            "nombre": "CSS:",
+            "valor": "--bar-value:70%;",
+            "valorNum": "70"
         }
     ]
 }
