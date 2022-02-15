@@ -40,7 +40,7 @@
 }
 
 /* posicionamos el % del gráfico*/
-.chart-wrap .grid::before{
+/*.chart-wrap .grid::before{
     font-size:0.8em;
     font-weight:bold;
     content:'0%';
@@ -55,7 +55,7 @@
     position:absolute;
     right:-1.5em;
     top:-1.5em;
-}
+}*/
 
 /* giramos las valores de 0% y 100% para horizontal */
 .chart-wrap.horizontal .grid::before, .chart-wrap.horizontal .grid::after {
@@ -89,3 +89,4 @@ ul{
 #name{
     font-family: "Poppins", sans-serif;
 }
+

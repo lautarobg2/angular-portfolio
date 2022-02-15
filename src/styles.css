@@ -1,42 +1,44 @@
 #wpp-icon{
     display: flex;
     align-items: center;
-    margin-right: 15px;
+    margin-right: 0.938em;
 }
 #mail-icon{
     display: flex;
     align-items: center;
-    margin-right: 10px;
+    margin-right: 0.625em;
 }
 
 #linkedin-icon{
     display: flex;
     align-items: center;
-    margin-right: 10px;
+    margin-right: 0.625em;
 }
 
 .imput-username{
-    margin-right: 5px;
+    margin-right: 0.313em;
 }
 .imput-password{
-    margin-right: 5px;
+    margin-right: 0.313em;
 }
 #profile{
-    width: 150px;
-    height: 150px;
+    width: 9.375em;
+    height: 9.375em;
     background: black;
     box-shadow: 0 0 3px 3px rgba(8, 8, 118, 4);
     position: absolute;
-    margin-top: 250px;
-    margin-left: 55px;
+    margin-top: 15em;
+    margin-left: 3.438em;
 }
 #contenedor-todo-header{
     position: relative;
 }
+
 #blue-banner{
     width: 100%;
-    height: 500px;
+    height: 31.25em;
 }
+
 #nombre{
     font-family: 'Poppins', sans-serif;
     
@@ -45,9 +47,9 @@
     font-family: 'Poppins', sans-serif;
 }
 #contenedor-nombre-titulo{
-    width: 420px;
-    margin-left: 230px;
-    margin-top: 310px;
+    width: auto;
+    margin-left: 14.375em;
+    margin-top: 19.375em;
     position: absolute;
 }
 
@@ -88,14 +90,14 @@
 
 #plus{
     position: absolute;
-    right: 35px;
-    top: 5px;
+    right: 2.188em;
+    top: 0.313em;
 }
 
 #edit{
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 0.313em;
+    right: 0.313em;
 }
 
 #educacion{
@@ -106,40 +108,40 @@
 }
 
 .descripcion-educacion{
-    font-size: 15px;
+    font-size: 0.938em;
 }
 
 .education-text{
-    width: 900px;
+    width: 56.25em;
     display: flex;
 }
 
 #education-list{
     font-family: "Poppins", sans-serif;
-    font-size: 25px;
+    font-size: 1.563em;
     list-style: none;
 } 
 
 .card-title-education{
-    font-size: 30px;
+    font-size: 1.875em;
 }
 
 .card-title-acerca-de{
-    font-size: 30px;
+    font-size: 1.875em;
 }
 
 #salud-icon{
-    margin-top: 15px;
-    margin-right: 15px;
+    margin-top: 0.938em;
+    margin-right: 0.938e;
 }
 
 #argprog-icon{
-    margin-top: 25px;
-    margin-right: 15px;
+    margin-top: 1.563em;
+    margin-right: 0.938e;
 }
 
 #school-icon{
-    margin-right: 15px;
+    margin-right: 0.938em;
 
 }
 
