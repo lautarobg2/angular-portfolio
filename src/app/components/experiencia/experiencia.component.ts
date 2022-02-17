@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
 import { experiencia } from 'src/app/data/experiencia-interface';
 
+
 @Component({
   selector: 'app-experiencia',
   templateUrl: './experiencia.component.html',

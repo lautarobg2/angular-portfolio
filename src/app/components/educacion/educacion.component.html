@@ -15,7 +15,7 @@
         <div>
           <ul id="education-list" *ngFor="let item of educacionInfo">
             <li>
-                <img [src]="item.img" id="school-icon" class="rounded float-start" alt="school" width="75px" height="75px">
+                <img [src]="item.img" id="school-icon" class="rounded float-start" alt="img" width="75px" height="75px">
                 <div class="list-group">
                   <div class="d-flex w-100 justify-content-between">
                     <small class="text-muted">{{item.time}}</small>
@@ -24,8 +24,10 @@
                   <small class="text-muted">{{item.description}}</small>
                 </div>
             </li>
-            <br>
           </ul>
         </div>
     </div>
   </div>
+
+
+  
