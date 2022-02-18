@@ -15,6 +15,12 @@
     margin-right: 0.625em;
 }
 
+.nav-item a{
+    padding-left: 30px;
+    text-decoration: none;
+    color: black;
+}
+
 .imput-username{
     margin-right: 0.313em;
 }

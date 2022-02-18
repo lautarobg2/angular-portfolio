@@ -25,3 +25,9 @@
     background-color: #008CBA;
     color: white;
 }
+
+.card-text{
+    padding-left: 170px;
+    padding-right: 50px;
+    font-size: larger;
+}
