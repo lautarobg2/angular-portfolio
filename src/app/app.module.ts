@@ -30,7 +30,7 @@ import { SkillsComponent } from './components/skills/skills.component';
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule,
+    FormsModule,  
     CommonModule
   ],
   providers: [],
