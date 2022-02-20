@@ -1,0 +1,20 @@
+<circle-progress
+
+  [radius]="100"
+  [outerStrokeWidth]="15"
+  [innerStrokeWidth]="10"
+  [innerStrokeColor]="'##e7e8ea'"
+  [animation]="true"
+  [showTitle]="true"
+  [responsive]="false"
+  [animationDuration]="1000"
+  [subtitleFontSize]="'20'"
+
+
+  [title]="skill.title"
+  [subtitle]="skill.subtitle"
+  [outerStrokeColor]="skill.outerStrokeColor"
+
+  *ngFor="let skill of skillsInfo" 
+
+></circle-progress>

@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +15,7 @@ import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { SkillsComponent } from './components/skills/skills.component';
+import { ItemSkillsComponent } from './components/item-skills/item-skills.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { SkillsComponent } from './components/skills/skills.component';
     EducacionComponent,
     ExperienciaComponent,
     SkillsComponent,
+    ItemSkillsComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,36 @@ import { SkillsComponent } from './components/skills/skills.component';
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,  
-    CommonModule
+    CommonModule,
+    NgCircleProgressModule.forRoot({
+      backgroundGradient: true,
+      backgroundColor: "#ffffff",
+      backgroundGradientStopColor: "#c0c0c0",
+      backgroundPadding: -5,
+      radius: 60,
+      space: -10,
+      maxPercent: 100,
+      unitsFontSize: "25",
+      unitsFontWeight: "600",
+      outerStrokeWidth: 13,
+      outerStrokeColor: "#61A9DC",
+      outerStrokeLinecap: "round",
+      innerStrokeWidth: 18,
+      titleFontSize: "27",
+      titleFontWeight: "600",
+      subtitleColor: "#444444",
+      subtitleFontSize: "12",
+      subtitleFontWeight: "600",
+      imageHeight: 127,
+      imageWidth: 145,
+      showInnerStroke: false,
+      clockwise: false,
+      startFromZero: false,
+      animation: true,
+      showUnits: true,
+      animationDuration: 100,
+      percent: 30
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

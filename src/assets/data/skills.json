@@ -1,19 +1,25 @@
 {
     "skills": [
         {
-            "nombre": "Microsoft Office:",
-            "valor": "--bar-value:13%;",
-            "valorNum": "13"
+            "title": "90",
+            "subtitle":"HTML",
+            "outerStrokeColor":"orange"
         },
         {
-            "nombre": "HTML:",
-            "valor": "--bar-value:45%;",
-            "valorNum": "45"
+            "title": "70",
+            "subtitle":"CSS",
+            "outerStrokeColor":"blue"
         },
         {
-            "nombre": "CSS:",
-            "valor": "--bar-value:70%;",
-            "valorNum": "70"
+            "title": "50",
+            "subtitle":"ANGULAR",
+            "outerStrokeColor":"red"
+        },
+        {
+            "title": "30",
+            "subtitle":"BOOTSTRAP",
+            "outerStrokeColor":"purple"
         }
+
     ]
 }

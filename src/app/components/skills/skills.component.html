@@ -1,18 +1,7 @@
-<div id="skills-box" class="card border-dark mb-3" style="max-width: 80rem;">
+<div id="skills" class="card border-dark mb-3" style="max-width: 80rem;">
+    <h4 id="scrollspyHeadingSkills" class="title-skills">Hard & Soft Skills:</h4>
 
-<div class="chart-wrap"> <!-- quitar el estilo "horizontal" para visualizar verticalmente -->
-  <div id="scrollspyHeadingSkills" class="title">Hard & Soft Skills:</div>
- 
-  <div class="grid">
-    <ul *ngFor="let skill of skillsInfo">
-      <li>
-        <p id="name">{{skill.nombre}}</p>
-        <div class="bar" [style]=skill.valor [title]=skill.valorNum></div>
-      </li>
-      
-    </ul>
-  </div>
-</div>
+    <app-item-skills></app-item-skills>
 </div>
 
 

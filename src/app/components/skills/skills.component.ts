@@ -2,6 +2,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, Input, OnInit } from '@angular/core';
 import { SkillsService } from 'src/app/services/skills.service';
 import { skills } from 'src/app/data/skills-interface';
+import { ItemSkillsComponent } from '../item-skills/item-skills.component';
 
 @Component({
   selector: 'app-skills',
@@ -11,16 +12,9 @@ import { skills } from 'src/app/data/skills-interface';
 export class SkillsComponent implements OnInit {
 
 
-  skillsInfo: any = []
-
   constructor(private SkillsService: SkillsService) { }
 
   ngOnInit(): void {
-    this.SkillsService.obtenerDatosSkills().subscribe(
-      (data) => {
-        this.skillsInfo = data;
-      }
-    );
   }
 
 }
