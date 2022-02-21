@@ -62,7 +62,7 @@ import { ItemSkillsComponent } from './components/item-skills/item-skills.compon
       animation: true,
       showUnits: true,
       animationDuration: 100,
-      percent: 30
+      
     })
   ],
   providers: [],

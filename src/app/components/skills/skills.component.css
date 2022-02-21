@@ -1,2 +1,7 @@
-
-
+.contiene-progres{
+    margin-top: 15px;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}

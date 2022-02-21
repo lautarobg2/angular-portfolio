@@ -1,7 +1,7 @@
 {
     "skills": [
         {
-            "title": "90",
+            "title": "80",
             "subtitle":"HTML",
             "outerStrokeColor":"orange"
         },
@@ -11,15 +11,37 @@
             "outerStrokeColor":"blue"
         },
         {
-            "title": "50",
+            "title": "60",
             "subtitle":"ANGULAR",
             "outerStrokeColor":"red"
-        },
+        },                               
         {
-            "title": "30",
+            "title": "90",
             "subtitle":"BOOTSTRAP",
             "outerStrokeColor":"purple"
+        },
+        {
+            "title": "90",
+            "subtitle":"GIT",
+            "outerStrokeColor":"grey"
+        },
+        {
+            "title": "100",
+            "subtitle":"Trabajo en Equipo",
+            "outerStrokeColor":"grey"
+        },
+        {
+            "title": "100",
+            "subtitle":"Trabajo en Equipo",
+            "outerStrokeColor":"grey"
+        },
+        {
+            "title": "100",
+            "subtitle":"Trabajo en Equipo",
+            "outerStrokeColor":"grey"
         }
+
+
 
     ]
 }

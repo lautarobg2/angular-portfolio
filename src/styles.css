@@ -128,12 +128,14 @@
     list-style: none;
 } 
 
-.card-title-education{
-    font-size: 1.875em;
-}
 
-.card-title-acerca-de{
+.card-title-title{
     font-size: 1.875em;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: bold;
 }
 
 #salud-icon{
@@ -163,6 +165,14 @@
     font-family: "Poppins", sans-serif;
     margin-left: 20px;
     margin-top: 18px;
+    font-size: 1.875em;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: bold;
+
+    
 }
 
 
@@ -174,5 +184,6 @@
 .progress-bar{
     border-radius: 5px;
 }
+
 
 

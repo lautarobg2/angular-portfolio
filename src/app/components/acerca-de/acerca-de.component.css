@@ -27,7 +27,9 @@
 }
 
 .card-text{
-    padding-left: 170px;
-    padding-right: 50px;
     font-size: larger;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
 }

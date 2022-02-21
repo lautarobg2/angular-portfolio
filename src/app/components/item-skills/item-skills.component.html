@@ -1,6 +1,9 @@
+<div id="skill-item-card" >
 <circle-progress
+*ngFor="let skill of skillsInfo"
 
-  [radius]="100"
+
+  [radius]="90"
   [outerStrokeWidth]="15"
   [innerStrokeWidth]="10"
   [innerStrokeColor]="'##e7e8ea'"
@@ -10,11 +13,11 @@
   [animationDuration]="1000"
   [subtitleFontSize]="'20'"
 
-
+  [percent]= skill.title
   [title]="skill.title"
   [subtitle]="skill.subtitle"
   [outerStrokeColor]="skill.outerStrokeColor"
 
-  *ngFor="let skill of skillsInfo" 
-
+  
 ></circle-progress>
+</div>
