@@ -3,17 +3,17 @@
         {
             "title": "80",
             "subtitle":"HTML",
-            "outerStrokeColor":"orange"
+            "outerStrokeColor":"#DF7923"
         },
         {
-            "title": "70",
+            "title": "80",
             "subtitle":"CSS",
             "outerStrokeColor":"blue"
         },
         {
             "title": "60",
             "subtitle":"ANGULAR",
-            "outerStrokeColor":"red"
+            "outerStrokeColor":"#C60909"
         },                               
         {
             "title": "90",
@@ -31,14 +31,14 @@
             "outerStrokeColor":"grey"
         },
         {
-            "title": "100",
-            "subtitle":"Trabajo en Equipo",
-            "outerStrokeColor":"grey"
+            "title": "80",
+            "subtitle":"MySQL",
+            "outerStrokeColor":"#0E1978"
         },
         {
             "title": "100",
-            "subtitle":"Trabajo en Equipo",
-            "outerStrokeColor":"grey"
+            "subtitle":"Adaptable al entorno",
+            "outerStrokeColor":"#03B210"
         }
 
 

@@ -26,20 +26,6 @@
       </ul>
     <form class="d-flex">
 
-                <!-- ICONOS REDES SOCIALES-->
-
-              <div id="mail-icon">
-                <button class="betene btn1 hover"><i class="far fa-envelope"></i></button>
-              </div>
-
-             <div id="linkedin-icon">
-               <button class="betene btn1 hover"><i class="fab fa-linkedin"></i></button>
-             </div>
-
-             <div id="wpp-icon">
-               <button class="betene btn1 hover"><i class="fab fa-whatsapp"></i></button>
-             </div>
-
 
                                                <!-- MODAL -->
 
@@ -115,15 +101,15 @@
                      <!-- ICONOS Y LOGIN -->
 
           <div id="mail-icon">
-            <button class="betene btn1 hover"><i class="far fa-envelope"></i></button>
+            <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="betene btn1 hover"><i class="far fa-envelope"></i></a>
           </div>
 
           <div id="linkedin-icon">
-            <button class="betene btn1 hover"><i class="fab fa-linkedin"></i></button>
+            <a href="http://www.linkedin.com/in/lautaro-bogado-591582224/"class="betene btn1 hover"><i class="fab fa-linkedin"></i></a>
           </div>
 
           <div id="wpp-icon">
-            <button class="betene btn1 hover"><i class="fab fa-whatsapp"></i></button>
+            <a href="https://wa.me/5493624104545" class="betene btn1 hover"><i class="fab fa-whatsapp"></i></a>
           </div>
                 
           <h5 id="usuarioBienvenida">¡Bienvenido, Lautaro!</h5>
@@ -131,6 +117,22 @@
           <div class="login-icon">
             <button (click)="desloguearUsuario()" type="submit"class="btn btn-danger">Logout</button>
           </div>
+
+                                                         <!-- MODAL -->
+
+                  <!-- Button trigger modal -->
+                  <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-body">     <!-- Cuerpo dentro del modal -->
+                  
+                  <app-contact-form></app-contact-form>
+                  
+                </div>
+                </div>
+              </div>
+            </div>
       </form>
     </div>
   </nav>
