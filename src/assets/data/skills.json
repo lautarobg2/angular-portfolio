@@ -23,7 +23,7 @@
         {
             "title": "90",
             "subtitle":"GIT",
-            "outerStrokeColor":"grey"
+            "outerStrokeColor":"black"
         },
         {
             "title": "100",
@@ -37,7 +37,7 @@
         },
         {
             "title": "100",
-            "subtitle":"Adaptable al entorno",
+            "subtitle":"Cap. Adaptarse",
             "outerStrokeColor":"#03B210"
         }
 

@@ -1,9 +1,9 @@
 {
     "header": {
-        "profile": "https://i.ibb.co/rk8MKCh/pato.jpg",
+        "profile": "../assets/img/pato.jpg",
         "nombre": "Lautaro Alejandro Bogado",
         "titulo": "Full Stack Developer Junior",
-        "banner": "https://i.ibb.co/fqDSJPT/blue-header-png-6.png"
+        "banner": "./assets/img/blue.png"
     }
 }
 

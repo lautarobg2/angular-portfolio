@@ -2,11 +2,11 @@
 
   <div id="educacion" class="card border-dark mb-3" style="max-width: 80rem;">
     
-    <div id="edu-edit">
+    <div id="edu-edit" *ngIf="AuthService.usuarioLogueado">
       <button class="betene btn1 hover"><i class="fas fa-pencil-alt"></i></button>
       </div>
   
-      <div id="edu-plus">
+      <div id="edu-plus" *ngIf="AuthService.usuarioLogueado">
         <button class="betene btn1 hover"><i class="fas fa-plus"></i></button>
       </div>
   

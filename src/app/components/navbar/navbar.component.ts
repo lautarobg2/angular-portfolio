@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AuthService } from "src/app/services/auth.service";
 import { FormsModule } from '@angular/forms';
 
@@ -10,15 +10,26 @@ import { FormsModule } from '@angular/forms';
 })
 export class NavbarComponent implements OnInit {
 
+
   usuarioLogueado: boolean = false;
 
+  username: string = "";
+  password: string = "";
+
+
   loguearUsuario(){
-    this.usuarioLogueado = true;
+    if(this.username==="admin" && this.password==="admin"){
+      this.usuarioLogueado = true;
+      this.AuthService.usuarioLogueado = true;
+    }else{
+      alert("Nombre de usuario y/o contraseña son incorrectos");
+    }
      
   }
  
  desloguearUsuario(){
    this.usuarioLogueado = false;
+   this.AuthService.usuarioLogueado = false;
  }
 
   constructor(private AuthService: AuthService) { }

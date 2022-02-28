@@ -24,7 +24,6 @@
           <a href="#scrollspyHeadingSkills">Skills</a>
         </li>
       </ul>
-    <form class="d-flex">
 
 
                                                <!-- MODAL -->
@@ -45,14 +44,14 @@
 
                     <div class="input-group">
                       <span class="input-group-text" id="basic-addon1">Usuario</span>
-                      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                      <input type="text" class="form-control" [(ngModel)]="username" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                     <br>
                 <h5 class="modal-title" id="exampleModalLabel">Ingrese su contraseña:</h5>
 
                   <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">Contraseña</span>
-                    <input type="password" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="password" class="form-control" [(ngModel)]="password" aria-label="Username" aria-describedby="basic-addon1">
                   </div>
 
                 </div>
@@ -64,7 +63,6 @@
                 </div>
               </div>
             </div>
-      </form>
     </div>
   </nav>
 </div>
@@ -112,7 +110,7 @@
             <a href="https://wa.me/5493624104545" class="betene btn1 hover"><i class="fab fa-whatsapp"></i></a>
           </div>
                 
-          <h5 id="usuarioBienvenida">¡Bienvenido, Lautaro!</h5>
+          <h5 id="usuarioBienvenida">¡Bienvenido, {{username}}!</h5>
           
           <div class="login-icon">
             <button (click)="desloguearUsuario()" type="submit"class="btn btn-danger">Logout</button>
