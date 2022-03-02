@@ -5,13 +5,15 @@ import { educacion } from 'src/app/data/educacion-interface';
 import { AuthService } from 'src/app/services/auth.service';
 import { faTimes} from '@fortawesome/free-solid-svg-icons';
 
-
 @Component({
-  selector: 'app-educacion',
-  templateUrl: './educacion.component.html',
-  styleUrls: ['./educacion.component.css']
+  selector: 'app-item-educacion',
+  templateUrl: './item-educacion.component.html',
+  styleUrls: ['./item-educacion.component.css']
 })
-export class EducacionComponent implements OnInit {
+export class ItemEducacionComponent implements OnInit {
+
+  @Input() educacion:any;
+  
  
   faTimes = faTimes;
 
@@ -25,6 +27,7 @@ export class EducacionComponent implements OnInit {
     this.usuarioLogueado = this.AuthService.usuarioLogueado;
   }
 
+
   ngOnInit(): void {
     this.EducacionService.obtenerDatosEducacion().subscribe(
       (data) => {
@@ -32,9 +35,19 @@ export class EducacionComponent implements OnInit {
       }
     );
 
-  
+  }
+
+  onDelete(educacion:educacion){
+    console.log("hola")
+    this.EducacionService.onDelete(educacion)
+    .subscribe(
+      ()=>{
+        this.educacionInfo = this.educacionInfo.filter( (t) => {
+          return t.id !== educacion.id
+        })
+      })
   }
 
 
-
 }
+

@@ -9,8 +9,18 @@ import { map } from 'rxjs/operators';
 })
 export class EducacionService {
 
+  private apiUrl = "./assets/data/educacion.json";
+
   constructor(private http: HttpClient) { }
   obtenerDatosEducacion(): Observable<any> {
     return this.http.get<any>("./assets/data/educacion.json").pipe(map(res => res.educacion));
   }
+
+  onDelete(educacion: educacion): Observable<educacion>{
+    const url = `${this.apiUrl}/${educacion.id}`
+    return this.http.delete<any>(url)
+
+  }
+
+
 }

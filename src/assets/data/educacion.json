@@ -1,12 +1,21 @@
 {
     "educacion": [
     {
+        "id": 1,
         "img": "../assets/img/school.png",
         "time": "2012 - 2017",
         "title": "Escuela de Educación Técnica N° 27 - Francisco Ramon Le Vraux",
         "description": "Técnico en Equipos e Instalaciones Electromecánicas"
     },
     {
+        "id": 2,
+        "img": "../assets/img/argprog.jpeg",
+        "time": "2021 - 2021",
+        "title": "Argentina Programa - 1er Etapa: #SéProgramar",
+        "description": "Ministerio de Desarrollo Productivo CESSI"
+    },
+    {
+        "id": 2,
         "img": "../assets/img/argprog.jpeg",
         "time": "2021 - 2021",
         "title": "Argentina Programa - 1er Etapa: #SéProgramar",
