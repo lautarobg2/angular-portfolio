@@ -12,12 +12,9 @@ import { faTimes} from '@fortawesome/free-solid-svg-icons';
 })
 export class ItemEducacionComponent implements OnInit {
 
-  @Input() educacion:any;
-  
- 
   faTimes = faTimes;
 
-  educacionInfo: any;
+  educacionInfo: educacion[] = [];
 
   constructor(private AllDataService: AllDataService, public AuthService: AuthService) { }
 
@@ -37,17 +34,15 @@ export class ItemEducacionComponent implements OnInit {
 
   }
 
- /* onDelete(educacion:educacion){
-    console.log("hola")
-    this.AllDataService.onDelete(educacion)
-    .subscribe(
+  onDeleteEducacion(educacion:educacion){
+    this.AllDataService.onDeleteEducacion(educacion)
+    .subscribe( 
       ()=>{
-        this.educacionInfo = this.educacionInfo.filter( (t) => {
-          return t.id !== educacion.id
-        })
+      this.educacionInfo = this.educacionInfo.filter( (t) => {
+        return t.id !== educacion.id
       })
-  }*/
-
+    })
+  }
 
 }
 

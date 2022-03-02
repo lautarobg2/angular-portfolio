@@ -41,4 +41,9 @@ export class AllDataService {
   getDatosSkills():Observable<any>{
     return  this.http.get(this.apiUrlSkills);
   }
+
+  onDeleteEducacion(educacion:educacion):Observable<educacion>{
+    const url = `${this.apiUrlEducacion}/${educacion.id}`
+    return this.http.delete<educacion>(url)
+  }
 }
