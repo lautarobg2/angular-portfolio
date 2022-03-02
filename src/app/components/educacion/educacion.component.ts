@@ -1,6 +1,6 @@
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { EducacionService } from 'src/app/services/educacion.service';
+import { AllDataService } from 'src/app/services/all-data.service';
 import { educacion } from 'src/app/data/educacion-interface';
 import { AuthService } from 'src/app/services/auth.service';
 import { faTimes} from '@fortawesome/free-solid-svg-icons';
@@ -15,9 +15,9 @@ export class EducacionComponent implements OnInit {
  
   faTimes = faTimes;
 
-  educacionInfo: educacion[] = []
+  educacionInfo: any;
 
-  constructor(private EducacionService: EducacionService, public AuthService: AuthService) { }
+  constructor(private AllDataService: AllDataService, public AuthService: AuthService) { }
 
   usuarioLogueado:boolean= false;
 
@@ -26,7 +26,7 @@ export class EducacionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.EducacionService.obtenerDatosEducacion().subscribe(
+    this.AllDataService.getDatosEducacion().subscribe(
       (data) => {
         this.educacionInfo = data;
       }

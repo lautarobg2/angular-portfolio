@@ -1,6 +1,6 @@
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, EventEmitter, Input, OnInit } from '@angular/core';
-import { AcercadeService } from 'src/app/services/acercade.service';
+import { AllDataService } from 'src/app/services/all-data.service';
 import { acercade } from 'src/app/data/acerca-de-interface';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -12,9 +12,9 @@ import { AuthService } from 'src/app/services/auth.service';
 export class AcercaDeComponent implements OnInit {
 
 
-  acercadeInfo: any = []
+  acercadeInfo: any;
 
-  constructor(private AcercadeService: AcercadeService, public AuthService: AuthService) { }
+  constructor(private AllDataService: AllDataService, public AuthService: AuthService) { }
 
   usuarioLogueado:boolean= false;
 
@@ -23,7 +23,7 @@ export class AcercaDeComponent implements OnInit {
   }
   
   ngOnInit(): void {
-      this.AcercadeService.obtenerDatosAcercaDe().subscribe(
+      this.AllDataService.getDatosAcercaDe().subscribe(
         (data) => {
           this.acercadeInfo = data;
         }

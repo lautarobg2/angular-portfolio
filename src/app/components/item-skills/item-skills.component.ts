@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgCircleProgressModule } from 'ng-circle-progress';
-import { SkillsService } from 'src/app/services/skills.service';
+import { AllDataService } from 'src/app/services/all-data.service';
 import { skills } from 'src/app/data/skills-interface';
 
 
@@ -13,12 +13,12 @@ export class ItemSkillsComponent implements OnInit {
 
   @Input() datos: any;
 
-  skillsInfo: any = []
+  skillsInfo: any;
 
-  constructor(private SkillsService: SkillsService) { }
+  constructor(private AllDataService: AllDataService) { }
 
   ngOnInit(): void {
-    this.SkillsService.obtenerDatosSkills().subscribe(
+    this.AllDataService.getDatosSkills().subscribe(
       (data) => {
         this.skillsInfo = data;
       }

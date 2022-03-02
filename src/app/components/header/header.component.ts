@@ -1,6 +1,6 @@
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
-import { HeaderService } from 'src/app/services/header.service';
+import { AllDataService } from 'src/app/services/all-data.service';
 import { header } from 'src/app/data/header-interface';
 
 
@@ -11,12 +11,12 @@ import { header } from 'src/app/data/header-interface';
 })
 export class HeaderComponent implements OnInit {
 
-  headerInfo: any = []
+  headerInfo: any;
 
-  constructor(private HeaderService: HeaderService) { }
+  constructor(private AllDataService: AllDataService) { }
 
   ngOnInit(): void {
-    this.HeaderService.obtenerDatosHeader().subscribe(
+    this.AllDataService.getDatosHeader().subscribe(
       (data) => {
         this.headerInfo = data;
       }

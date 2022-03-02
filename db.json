@@ -1,0 +1,91 @@
+{
+  "header": [
+  {
+      "id": 0,
+      "profile": "../assets/img/pato.jpg",
+      "nombre": "Lautaro Alejandro Bogado",
+      "titulo": "Full Stack Developer Junior",
+      "banner": "./assets/img/blue.png"
+  }
+  ],
+  "acercade": [
+  {
+      "id": 0,
+      "description": "Soy una persona que destaca en responsabilidad, orden y puntualidad, cuento con muy buenas habilidades comunicativas. Aprendo y me adapto rápido, busco continuar desarrollándome como profesional."
+  }
+  ],
+  "educacion": [
+      {
+          "id": 1,
+          "img": "../assets/img/school.png",
+          "time": "2012 - 2017",
+          "title": "Escuela de Educación Técnica N° 27 - Francisco Ramon Le Vraux",
+          "description": "Técnico en Equipos e Instalaciones Electromecánicas"
+      },
+      {
+          "id": 2,
+          "img": "../assets/img/argprog.jpeg",
+          "time": "2021 - 2021",
+          "title": "Argentina Programa - 1er Etapa: #SéProgramar",
+          "description": "Ministerio de Desarrollo Productivo CESSI"
+      },
+      {
+          "id": 3,
+          "img": "../assets/img/argprog.jpeg",
+          "time": "2021 - 2021",
+          "title": "Argentina Programa - 1er Etapa: #SéProgramar",
+          "description": "Ministerio de Desarrollo Productivo CESSI"
+      }
+      ],
+      "experiencia": [
+      {
+          "img": "../assets/img/salud.png",
+          "time": "2021 - Actualidad",
+          "title": "Clínica S.A.L.L.U.D",
+          "description": "Administrativo y Secretario"
+      
+      }
+      ],
+      "skills": [
+      {
+          "title": "80",
+          "subtitle":"HTML",
+          "outerStrokeColor":"#DF7923"
+      },
+      {
+          "title": "80",
+          "subtitle":"CSS",
+          "outerStrokeColor":"blue"
+      },
+      {
+          "title": "60",
+          "subtitle":"ANGULAR",
+          "outerStrokeColor":"#C60909"
+      },                               
+      {
+          "title": "90",
+          "subtitle":"BOOTSTRAP",
+          "outerStrokeColor":"purple"
+      },
+      {
+          "title": "90",
+          "subtitle":"GIT",
+          "outerStrokeColor":"black"
+      },
+      {
+          "title": "100",
+          "subtitle":"Trabajo en Equipo",
+          "outerStrokeColor":"grey"
+      },
+      {
+          "title": "80",
+          "subtitle":"MySQL",
+          "outerStrokeColor":"#0E1978"
+      },
+      {
+          "title": "100",
+          "subtitle":"Cap. Adaptarse",
+          "outerStrokeColor":"#03B210"
+      }
+      ]
+}

@@ -1,6 +1,6 @@
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, Input, OnInit } from '@angular/core';
-import { SkillsService } from 'src/app/services/skills.service';
+import { AllDataService } from 'src/app/services/all-data.service';
 import { skills } from 'src/app/data/skills-interface';
 import { ItemSkillsComponent } from '../item-skills/item-skills.component';
 
@@ -12,7 +12,7 @@ import { ItemSkillsComponent } from '../item-skills/item-skills.component';
 export class SkillsComponent implements OnInit {
 
 
-  constructor(private SkillsService: SkillsService) { }
+  constructor(private AllDataService: AllDataService) { }
 
   ngOnInit(): void {
   }
