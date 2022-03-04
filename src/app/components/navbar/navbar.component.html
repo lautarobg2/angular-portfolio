@@ -1,21 +1,28 @@
-<div *ngIf="!usuarioLogueado">   <!-- NavBar de Usuario NO-LOGUEADO -->
+<div *ngIf="!usuarioLogueado">
+  <!-- NavBar de Usuario NO-LOGUEADO -->
 
-                                             <!-- BARRA DE NAVEGACION -->
-<nav id="navbar-example2" class="navbar navbar-light bg-light">
+  <!-- BARRA DE NAVEGACION -->
+  <nav id="navbar-example2" class="navbar navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="https://i.ibb.co/8dWqNMH/argprog.jpg" alt="logo" width="30" height="24" class="d-inline-block align-text-top">
-         Argentina Programa - #YoProgramo
+        <img
+          src="https://i.ibb.co/8dWqNMH/argprog.jpg"
+          alt="logo"
+          width="30"
+          height="24"
+          class="d-inline-block align-text-top"
+        />
+        Argentina Programa - #YoProgramo
       </a>
 
-                <!-- Navegador de secciones -->
+      <!-- Navegador de secciones -->
 
       <ul class="nav nav-pills">
         <li class="nav-item">
           <a href="#scrollspyHeadingAcercaDe">Acerca de</a>
         </li>
         <li class="nav-item">
-          <a  href="#scrollspyHeadingEdu">Educación</a>
+          <a href="#scrollspyHeadingEdu">Educación</a>
         </li>
         <li class="nav-item">
           <a href="#scrollspyHeadingExp">Experiencia</a>
@@ -25,68 +32,120 @@
         </li>
       </ul>
 
-      
+      <!-- MODAL -->
 
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-success"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        Login
+      </button>
 
-                                               <!-- MODAL -->
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="exampleModalLabel">Iniciar Sesión</h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- Cuerpo dentro del modal -->
+              <h5 class="modal-title" id="exampleModalLabel">
+                Ingrese su usuario:
+              </h5>
 
-                  <!-- Button trigger modal -->
-            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Usuario</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="username"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+              <br />
+              <h5 class="modal-title" id="exampleModalLabel">
+                Ingrese su contraseña:
+              </h5>
 
-                  <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                   <div class="modal-header">
-                      <h3 class="modal-title" id="exampleModalLabel">Iniciar Sesión</h3>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                   </div>
-                <div class="modal-body">     <!-- Cuerpo dentro del modal -->
-                  <h5 class="modal-title" id="exampleModalLabel">Ingrese su usuario:</h5>
-
-                    <div class="input-group">
-                      <span class="input-group-text" id="basic-addon1">Usuario</span>
-                      <input type="text" class="form-control" [(ngModel)]="username" aria-label="Username" aria-describedby="basic-addon1">
-                    </div>
-                    <br>
-                <h5 class="modal-title" id="exampleModalLabel">Ingrese su contraseña:</h5>
-
-                  <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">Contraseña</span>
-                    <input type="password" class="form-control" [(ngModel)]="password" aria-label="Username" aria-describedby="basic-addon1">
-                  </div>
-
-                </div>
-
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button (click)="loguearUsuario()" type="button" class="btn btn-success" data-bs-dismiss="modal">Login</button>
-                  </div>
-                </div>
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1"
+                  >Contraseña</span
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  [(ngModel)]="password"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                />
               </div>
             </div>
+
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                (click)="loguearUsuario()"
+                type="button"
+                class="btn btn-success"
+                data-bs-dismiss="modal"
+              >
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </nav>
 </div>
 
+<div *ngIf="usuarioLogueado">
+  <!-- NavBar de Usuario LOGUEADO -->
 
-<div *ngIf="usuarioLogueado">   <!-- NavBar de Usuario LOGUEADO -->
-
-                                             <!-- BARRA DE NAVEGACION -->
-<nav class="navbar navbar-light bg-light">
+  <!-- BARRA DE NAVEGACION -->
+  <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="https://i.ibb.co/8dWqNMH/argprog.jpg" alt="logo" width="30" height="24" class="d-inline-block align-text-top">
-         Argentina Programa - #YoProgramo
+        <img
+          src="https://i.ibb.co/8dWqNMH/argprog.jpg"
+          alt="logo"
+          width="30"
+          height="24"
+          class="d-inline-block align-text-top"
+        />
+        Argentina Programa - #YoProgramo
       </a>
-      
-                <!-- Navegador de secciones -->
+
+      <!-- Navegador de secciones -->
       <ul class="nav nav-pills">
         <li class="nav-item">
           <a href="#scrollspyHeadingAcercaDe">Acerca de</a>
         </li>
         <li class="nav-item">
-          <a  href="#scrollspyHeadingEdu">Educación</a>
+          <a href="#scrollspyHeadingEdu">Educación</a>
         </li>
         <li class="nav-item">
           <a href="#scrollspyHeadingExp">Experiencia</a>
@@ -97,46 +156,66 @@
       </ul>
 
       <form class="d-flex">
+        <!-- ICONOS Y LOGIN -->
 
-                     <!-- ICONOS Y LOGIN -->
+        <div id="mail-icon">
+          <a
+            type="button"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            class="betene btn1 hover"
+            ><i class="far fa-envelope"></i
+          ></a>
+        </div>
 
-          <div id="mail-icon">
-            <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="betene btn1 hover"><i class="far fa-envelope"></i></a>
-          </div>
+        <div id="linkedin-icon">
+          <a
+            href="http://www.linkedin.com/in/lautaro-bogado-591582224/"
+            class="betene btn1 hover"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </div>
 
-          <div id="linkedin-icon">
-            <a href="http://www.linkedin.com/in/lautaro-bogado-591582224/"class="betene btn1 hover"><i class="fab fa-linkedin"></i></a>
-          </div>
+        <div id="wpp-icon">
+          <a href="https://wa.me/5493624104545" class="betene btn1 hover"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
+        </div>
 
-          <div id="wpp-icon">
-            <a href="https://wa.me/5493624104545" class="betene btn1 hover"><i class="fab fa-whatsapp"></i></a>
-          </div>
-                
-          <h5 id="usuarioBienvenida">¡Bienvenido, {{username}}!</h5>
-          
-          <div class="login-icon">
-            <button (click)="desloguearUsuario()" type="submit"class="btn btn-danger">Logout</button>
-          </div>
+        <h5 id="usuarioBienvenida">¡Bienvenido, {{ username }}!</h5>
 
-                                                         <!-- MODAL -->
+        <div class="login-icon">
+          <button
+            (click)="desloguearUsuario()"
+            type="submit"
+            class="btn btn-danger"
+          >
+            Logout
+          </button>
+        </div>
 
-                  <!-- Button trigger modal -->
-                  <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                <div class="modal-body">     <!-- Cuerpo dentro del modal -->
-                  
-                  <app-contact-form></app-contact-form>
-                  
-                </div>
-                </div>
+        <!-- MODAL -->
+
+        <!-- Button trigger modal -->
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-body">
+                <!-- Cuerpo dentro del modal -->
+
+                <app-contact-form></app-contact-form>
               </div>
             </div>
+          </div>
+        </div>
       </form>
     </div>
   </nav>
 </div>
-
-
-
