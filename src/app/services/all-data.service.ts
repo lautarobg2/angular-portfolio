@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable} from '@angular/core';
 import {Observable} from 'rxjs'
 import{ acercade } from "src/app/data/acerca-de-interface"
@@ -6,6 +6,13 @@ import{ educacion } from "src/app/data/educacion-interface"
 import{ experiencia } from "src/app/data/experiencia-interface"
 import{ header } from "src/app/data/header-interface"
 import{ skills } from "src/app/data/skills-interface"
+
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+}
 
 
 @Injectable({
@@ -45,5 +52,9 @@ export class AllDataService {
   onDeleteEducacion(educacion:educacion):Observable<educacion>{
     const url = `${this.apiUrlEducacion}/${educacion.id}`
     return this.http.delete<educacion>(url)
+  }
+
+  addEducacion(educacion:educacion):Observable<educacion>{
+    return this.http.post<any>(this.apiUrlEducacion, educacion, httpOptions)
   }
 }
