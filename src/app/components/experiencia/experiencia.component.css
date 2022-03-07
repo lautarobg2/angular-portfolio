@@ -9,7 +9,6 @@
     text-align: center;
     display: inline-block;
     font-size: 16px;
-    margin: auto;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
@@ -27,20 +26,23 @@
 }
 
 
-
-#exp-edit{
+#exp-delete-edit{
     display: flex;
-    align-items: center;
-    position: absolute;
+    justify-content: flex-end;
+    align-items: flex-end;
     top: 5px;
     right: 5px;
-
+}
+#exp-delete-edit button{
+    margin-right: 8px;
 }
 
 #exp-plus{
     display: flex;
     align-items: center;
     position: absolute;
-    right: 50px;
-    top: 5px;
+    right: 25px;
+    top: 10px;
 }
+
+

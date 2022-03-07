@@ -5,13 +5,31 @@
 >
   <h4 id="scrollspyHeadingSkills" class="title-skills">Hard & Soft Skills:</h4>
 
-  <div id="exp-edit">
+  <div id="sk-edit">
     <button class="betene btn1 hover"><i class="fas fa-pencil-alt"></i></button>
   </div>
 
-  <div id="exp-plus">
+  <div id="sk-plus">
     <button class="betene btn1 hover"><i class="fas fa-plus"></i></button>
   </div>
 
-  <app-item-skills></app-item-skills>
-</div>
+  <div id="skill-item-card">
+    <circle-progress
+      *ngFor="let skill of skillsInfo"
+      [radius]="90"
+      [outerStrokeWidth]="15"
+      [innerStrokeWidth]="10"
+      [innerStrokeColor]="'##e7e8ea'"
+      [animation]="true"
+      [showTitle]="true"
+      [responsive]="false"
+      [animationDuration]="1000"
+      [subtitleFontSize]="'20'"
+      [percent]="skill.title"
+      [title]="skill.title"
+      [subtitle]="skill.subtitle"
+      [outerStrokeColor]="skill.outerStrokeColor"
+    ></circle-progress>
+  </div>
+
+  </div>

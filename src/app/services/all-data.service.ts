@@ -55,6 +55,18 @@ export class AllDataService {
   }
 
   addEducacion(educacion:educacion):Observable<educacion>{
-    return this.http.post<any>(this.apiUrlEducacion, educacion, httpOptions)
+    return this.http.post<educacion>(this.apiUrlEducacion, educacion, httpOptions)
   }
+
+  onDeleteExperiencia(experiencia:experiencia):Observable<experiencia>{
+    const url = `${this.apiUrlExperiencia}/${experiencia.id}`
+    return this.http.delete<experiencia>(url)
+  }
+
+  addExperiencia(experiencia:experiencia):Observable<experiencia>{
+    return this.http.post<experiencia>(this.apiUrlExperiencia, experiencia, httpOptions)
+  }
+
+
+  
 }
