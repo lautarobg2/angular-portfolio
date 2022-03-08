@@ -13,16 +13,15 @@
     <button class="betene btn1 hover"><i class="fas fa-plus"></i></button>
   </div>
 
-  <div id="skill-item-card">
+  <div id="skill-item-card" *ngFor="let skill of skillsInfo">
     <circle-progress
-      *ngFor="let skill of skillsInfo"
       [radius]="90"
       [outerStrokeWidth]="15"
       [innerStrokeWidth]="10"
       [innerStrokeColor]="'##e7e8ea'"
       [animation]="true"
       [showTitle]="true"
-      [responsive]="false"
+      [responsive]="true"
       [animationDuration]="1000"
       [subtitleFontSize]="'20'"
       [percent]="skill.title"
@@ -30,6 +29,13 @@
       [subtitle]="skill.subtitle"
       [outerStrokeColor]="skill.outerStrokeColor"
     ></circle-progress>
+    <button class="betene btn1 hover">
+      <fa-icon
+        [icon]="faTimes"
+        [ngStyle]="{ color: 'red' }"
+      ></fa-icon>
+    </button>
+
   </div>
 
   </div>

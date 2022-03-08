@@ -30,6 +30,9 @@ export class EducacionComponent implements OnInit {
 
   educacionInfo: educacion[] = [];
 
+  eduSelected: any = null
+
+
   constructor(private AllDataService: AllDataService, public AuthService: AuthService, private UiService: UiService) { }
 
   usuarioLogueado:boolean= false;
@@ -48,8 +51,6 @@ export class EducacionComponent implements OnInit {
         this.educacionInfo = data;
       }
     );
-
-
   
   }
 
@@ -67,6 +68,15 @@ export class EducacionComponent implements OnInit {
         return t.id !== educacion.id
       })
     })
+  }
+
+  startEdition(){
+    this.eduSelected = this.educacionInfo
+  }
+
+  onUpdate(){
+    const index = this.educacionInfo.findIndex(e => e.id === this.eduSelected.id);
+    this.educacionInfo[index].title = this.eduSelected.title;
   }
 
 

@@ -3,6 +3,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { AllDataService } from 'src/app/services/all-data.service';
 import { skills } from 'src/app/data/skills-interface';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { faTimes} from '@fortawesome/free-solid-svg-icons';
+
 
 
 @Component({
@@ -11,6 +13,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements OnInit {
+
+  faTimes = faTimes;
 
   skillsInfo: any;
 
