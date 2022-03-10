@@ -18,19 +18,12 @@ export class EducacionComponent implements OnInit {
 
              //  VARIABLES MODAL DE AGREGAR NUEVO ESTUDIO
 
-  id?: number;
-  img: string = "";
-  title: string = "";
-  description: string = "";
-  time: string = "";
 
   newEdu: educacion = newEDU;
  
   faTimes = faTimes;
 
   educacionInfo: educacion[] = [];
-
-  eduSelected: any = null
 
 
   constructor(private AllDataService: AllDataService, public AuthService: AuthService, private UiService: UiService) { }
@@ -42,9 +35,6 @@ export class EducacionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    const { id, img, title, description, time } = this
-    const newEdu = { id, img, title, description, time }
 
     this.AllDataService.getDatosEducacion().subscribe(
       (data) => {
@@ -70,16 +60,13 @@ export class EducacionComponent implements OnInit {
     })
   }
 
-  startEdition(){
-    this.eduSelected = this.educacionInfo
+  onUpdate(educacion:educacion){
+    if (this.newEdu.id){
+      this.AllDataService.saveEditEducacion(this.newEdu).subscribe( (newEdu) =>  (
+        this.educacionInfo.push(newEdu)
+      ))
+    }
   }
-
-  onUpdate(){
-    const index = this.educacionInfo.findIndex(e => e.id === this.eduSelected.id);
-    this.educacionInfo[index].title = this.eduSelected.title;
-  }
-
-
 
 
 }

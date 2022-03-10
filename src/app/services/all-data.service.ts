@@ -49,15 +49,26 @@ export class AllDataService {
     return  this.http.get(this.apiUrlSkills);
   }
 
+                
+                      // EDUCACION
+
   onDeleteEducacion(educacion:educacion):Observable<educacion>{
     const url = `${this.apiUrlEducacion}/${educacion.id}`
     return this.http.delete<educacion>(url)
+  }
+
+  saveEditEducacion(educacion:educacion):Observable<educacion>{
+    const url = `${this.apiUrlEducacion}/${educacion.id}`
+    return this.http.patch<educacion>(url, educacion, httpOptions)
   }
 
   addEducacion(educacion:educacion):Observable<educacion>{
     return this.http.post<educacion>(this.apiUrlEducacion, educacion, httpOptions)
   }
 
+
+                       // EXPERIENCIA  
+                       
   onDeleteExperiencia(experiencia:experiencia):Observable<experiencia>{
     const url = `${this.apiUrlExperiencia}/${experiencia.id}`
     return this.http.delete<experiencia>(url)

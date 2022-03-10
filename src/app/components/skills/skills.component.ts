@@ -4,6 +4,7 @@ import { AllDataService } from 'src/app/services/all-data.service';
 import { skills } from 'src/app/data/skills-interface';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { faTimes} from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 
@@ -18,7 +19,7 @@ export class SkillsComponent implements OnInit {
 
   skillsInfo: any;
 
-  constructor(private AllDataService: AllDataService) { }
+  constructor(private AllDataService: AllDataService, public AuthService: AuthService) { }
 
   ngOnInit(): void {
     this.AllDataService.getDatosSkills().subscribe(

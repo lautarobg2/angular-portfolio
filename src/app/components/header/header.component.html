@@ -10,6 +10,9 @@
           class="rounded float-start"
           alt="img de perfil"
         />
+        <div id="hd-edit" *ngIf="AuthService.usuarioLogueado">
+          <button class="betene btn1 hover"><i class="fas fa-pencil-alt"></i></button>
+        </div>      
       </div>
       <!-- NOMBRE Y TITULO -->
       <div id="contenedor-nombre-titulo">

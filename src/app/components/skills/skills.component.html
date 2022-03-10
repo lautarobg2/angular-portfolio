@@ -5,11 +5,11 @@
 >
   <h4 id="scrollspyHeadingSkills" class="title-skills">Hard & Soft Skills:</h4>
 
-  <div id="sk-edit">
+  <div id="sk-edit" *ngIf="AuthService.usuarioLogueado">
     <button class="betene btn1 hover"><i class="fas fa-pencil-alt"></i></button>
   </div>
 
-  <div id="sk-plus">
+  <div id="sk-plus" *ngIf="AuthService.usuarioLogueado">
     <button class="betene btn1 hover"><i class="fas fa-plus"></i></button>
   </div>
 
@@ -29,7 +29,7 @@
       [subtitle]="skill.subtitle"
       [outerStrokeColor]="skill.outerStrokeColor"
     ></circle-progress>
-    <button class="betene btn1 hover">
+    <button class="betene btn1 hover" *ngIf="AuthService.usuarioLogueado">
       <fa-icon
         [icon]="faTimes"
         [ngStyle]="{ color: 'red' }"

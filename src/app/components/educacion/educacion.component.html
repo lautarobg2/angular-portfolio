@@ -26,7 +26,6 @@
               <button class="betene btn1 hover"
               data-bs-toggle="modal"
               data-bs-target="#eduEditModal"
-              (click)="startEdition()"
               >       
                 <i class="fas fa-pencil-alt"></i>
               </button>
@@ -47,6 +46,92 @@
               <p class="mb-1">{{ item.title }}</p>
               <small class="text-muted">{{ item.description }}</small>
             </div>
+
+
+<!-- MODAL DEL EDIT -->
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="eduEditModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">
+          Edite su estudio:
+        </h3>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Cuerpo dentro del modal -->
+
+        <h5 class="modal-title" id="exampleModalLabel">Institución:</h5>
+        <div class="input-group">
+          <input
+            type="text"
+            name="title"
+            id="title"
+            [(ngModel)]="newEdu.title"
+            class="form-control"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <br />
+        <h5 class="modal-title" id="exampleModalLabel">Título conseguido:</h5>
+        <br />
+        <div class="input-group">
+          <input
+            type="text"
+            name="description"
+            id="description"
+            [(ngModel)]="newEdu.description"
+            class="form-control"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <br />
+        <h5 class="modal-title" id="exampleModalLabel">Inicio - Final:</h5>
+        <div class="input-group">
+          <input
+            type="text"
+            name="time"
+            id="time"
+            [(ngModel)]="newEdu.time"
+            class="form-control"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button
+        (click)="onUpdate(item)"
+          type="button"
+          class="btn btn-success"
+          data-bs-dismiss="modal"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
           </li>
         </ul>
   
@@ -133,82 +218,4 @@
 </div>
 
 
-<!-- MODAL DEL EDIT -->
-<!-- Modal -->
-<div
-  class="modal fade"
-  id="eduEditModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLabel">
-          Edite su estudio:
-        </h3>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
 
-      <div class="modal-body">
-        <!-- Cuerpo dentro del modal -->
-
-        <h5 class="modal-title" id="exampleModalLabel">Institución:</h5>
-        <div class="input-group">
-          <input
-            type="text"
-            name="title"
-            id="title"
-            [(ngModel)]="eduSelected.title"
-            class="form-control"
-            aria-describedby="basic-addon1"
-          />
-        </div>
-        <br />
-        <h5 class="modal-title" id="exampleModalLabel">Título conseguido:</h5>
-        <br />
-        <div class="input-group">
-          <input
-            type="text"
-            name="description"
-            id="description"
-            [(ngModel)]="eduSelected.description"
-            class="form-control"
-            aria-describedby="basic-addon1"
-          />
-        </div>
-        <br />
-        <h5 class="modal-title" id="exampleModalLabel">Inicio - Final:</h5>
-        <div class="input-group">
-          <input
-            type="text"
-            name="time"
-            id="time"
-            [(ngModel)]="eduSelected.time"
-            class="form-control"
-            aria-describedby="basic-addon1"
-          />
-        </div>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Close
-        </button>
-        <button
-          type="button"
-          class="btn btn-success"
-          data-bs-dismiss="modal"
-        >
-          Edit
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
