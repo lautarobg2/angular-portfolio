@@ -57,8 +57,8 @@ export class AllDataService {
     return this.http.delete<educacion>(url)
   }
 
-  saveEditEducacion(educacion:educacion):Observable<educacion>{
-    const url = `${this.apiUrlEducacion}/${educacion.id}`
+  saveEditEducacion(educacion?:educacion):Observable<educacion>{
+    const url = `${this.apiUrlEducacion}/${educacion?.id}`
     return this.http.patch<educacion>(url, educacion, httpOptions)
   }
 

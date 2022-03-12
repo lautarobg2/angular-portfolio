@@ -20,6 +20,8 @@ export class EducacionComponent implements OnInit {
 
 
   newEdu: educacion = newEDU;
+
+  eduSelected?: educacion;;
  
   faTimes = faTimes;
 
@@ -60,12 +62,12 @@ export class EducacionComponent implements OnInit {
     })
   }
 
-  onUpdate(educacion:educacion){
-    if (this.newEdu.id){
-      this.AllDataService.saveEditEducacion(this.newEdu).subscribe( (newEdu) =>  (
-        this.educacionInfo.push(newEdu)
-      ))
-    }
+  onSelectEdit(index: number){
+    this.eduSelected = this.educacionInfo[index];
+  }
+
+  onUpdate(){
+    this.AllDataService.saveEditEducacion(this.eduSelected);
   }
 
 
