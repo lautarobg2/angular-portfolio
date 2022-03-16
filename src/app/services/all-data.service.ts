@@ -25,6 +25,7 @@ export class AllDataService {
   apiUrlEducacion: string = "http://localhost:3000/educacion";
   apiUrlExperiencia: string = "http://localhost:3000/experiencia";
   apiUrlSkills: string = "http://localhost:3000/skills";
+  apiUrlProyects: string = "http://localhost:3000/proyects";
 
 
   constructor( private http: HttpClient) { }
@@ -47,6 +48,10 @@ export class AllDataService {
 
   getDatosSkills():Observable<any>{
     return  this.http.get(this.apiUrlSkills);
+  }
+
+  getDatosProyects():Observable<any>{
+    return  this.http.get(this.apiUrlProyects);
   }
 
                 

@@ -1,7 +1,7 @@
 #wpp-icon{
     display: flex;
     align-items: center;
-    margin-right: 0.938em;
+    margin-right: 0.950em;
 }
 #mail-icon{
     display: flex;
@@ -55,7 +55,7 @@
 #contenedor-nombre-titulo{
     width: auto;
     margin-left: 14.375em;
-    margin-top: 19.375em;
+    margin-top: 17.5em;
     position: absolute;
 }
 
@@ -79,7 +79,6 @@
     box-shadow: 0 0 3px 3px rgba(0, 0, 0, 4);
     position: relative;
 }
-
 
 #acerca-de-text{
     font-family: "Poppins", sans-serif; 
@@ -160,7 +159,7 @@
 }
 
 
-.title-skills{
+.title{
     font-size: 30px;
     font-family: "Poppins", sans-serif;
     margin-left: 20px;

@@ -8,12 +8,16 @@
       "banner": "./assets/img/blue.png"
     }
   ],
+
+
   "acercade": [
     {
       "id": 0,
       "description": "Soy una persona que destaca en responsabilidad, orden y puntualidad, cuento con muy buenas habilidades comunicativas. Aprendo y me adapto rápido, busco continuar desarrollándome como profesional."
     }
   ],
+
+
   "educacion": [
     {
       "id": 1,
@@ -30,6 +34,8 @@
       "description": "Ministerio de Desarrollo Productivo CESSI"
     }
   ],
+
+
   "experiencia": [
     {
       "id": 1,
@@ -39,6 +45,8 @@
       "description": "Administrativo y Secretario"
     }
   ],
+
+
   "skills": [
     {
       "id": 1,
@@ -73,7 +81,7 @@
     {
       "id": 6,
       "title": "100",
-      "subtitle": "Trabajo en Equipo",
+      "subtitle": "Team Work",
       "outerStrokeColor": "grey"
     },
     {
@@ -88,5 +96,24 @@
       "subtitle": "Cap. Adaptarse",
       "outerStrokeColor": "#03B210"
     }
+  ],
+
+
+  "proyects": [
+    {
+      "id": 1,
+      "img": "../assets/img/taskList.png",
+      "title": "Aplicación Lista de Tareas",
+      "description": "Es una pequeña aplicación web pensada y enfocada para que lleves tu rutina de manera organizada, incluye funcionalidades de agregar una nueva tarea, eliminarla y marcarla como destacada.",
+      "link": ""
+    },
+    {
+      "id": 2,
+      "img": "../assets/img/portfolio.png",
+      "title": "Este Portfolio Web",
+      "description": "Un curriculum Vitae donde está plasmada de forma digital toda mi carrera hasta la actualidad; desde los estudios, donde he trabajado, mis mejores habilidades, como tambien asi los proyectos que he realizado hasta la fecha.",
+      "link": ""
+    }
+
   ]
 }

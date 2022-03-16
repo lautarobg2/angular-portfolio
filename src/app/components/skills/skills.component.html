@@ -3,7 +3,7 @@
   class="card border-dark mb-3 contiene-progres"
   style="max-width: 80rem"
 >
-  <h4 id="scrollspyHeadingSkills" class="title-skills">Hard & Soft Skills:</h4>
+  <h4 id="scrollspyHeadingSkills" class="title">Hard & Soft Skills:</h4>
 
   <div id="sk-edit" *ngIf="AuthService.usuarioLogueado">
     <button class="betene btn1 hover"><i class="fas fa-pencil-alt"></i></button>
@@ -13,22 +13,27 @@
     <button class="betene btn1 hover"><i class="fas fa-plus"></i></button>
   </div>
 
-  <div id="skill-item-card" *ngFor="let skill of skillsInfo">
+  <div class="contiene-progress col-10" 
+  >
     <circle-progress
-      [radius]="90"
-      [outerStrokeWidth]="15"
+    *ngFor="let skill of skillsInfo"
+      [radius]="65"
+      [outerStrokeWidth]="10"
       [innerStrokeWidth]="10"
       [innerStrokeColor]="'##e7e8ea'"
       [animation]="true"
       [showTitle]="true"
-      [responsive]="true"
+      [responsive]="false"
       [animationDuration]="1000"
       [subtitleFontSize]="'20'"
       [percent]="skill.title"
       [title]="skill.title"
       [subtitle]="skill.subtitle"
       [outerStrokeColor]="skill.outerStrokeColor"
+      [imageHeight]="60"
+      [imageWidth]="60"
     ></circle-progress>
+
     <button class="betene btn1 hover" *ngIf="AuthService.usuarioLogueado">
       <fa-icon
         [icon]="faTimes"

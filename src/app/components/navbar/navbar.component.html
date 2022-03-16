@@ -1,38 +1,61 @@
-<div>
-  <!-- BARRA DE NAVEGACION -->
-  <nav id="navbar-example2" class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img
-          src="../assets/img/newLogoAP.png"
-          alt="logo"
-          width="150"
-          height="50"
-          class="d-inline-block align-text-top"
-        />
-      </a>
-
-
-      <!-- Navegador de secciones -->
-
-      <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a  style="color: white" href="#scrollspyHeadingAcercaDe">Acerca de</a>
-        </li>
-        <li class="nav-item">
-          <a style="color: white" href="#scrollspyHeadingEdu">Educación</a>
-        </li>
-        <li class="nav-item">
-          <a style="color: white" href="#scrollspyHeadingExp">Experiencia</a>
-        </li>
-        <li class="nav-item">
-          <a style="color: white" href="#scrollspyHeadingSkills">Skills</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img
+        src="../assets/img/newLogoAP.png"
+        alt="logo"
+        width="150"
+        height="50"
+        class="d-inline-block align-text-top"
+      />
+      <img
+        src="../assets/img/yoProgramo.png"
+        alt="logo"
+        width="150"
+        height="50"
+        class="d-inline-block align-text-top"
+      />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"></li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Navegador de Secciones
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a href="#scrollspyHeadingAcercaDe">Acerca de</a></li>
+            <li><a href="#scrollspyHeadingEdu">Educación</a></li>
+            <li><a href="#scrollspyHeadingExp">Experiencia</a></li>
+            <li><a href="#scrollspyHeadingSkills">Skills</a></li>
+            <li><a href="#scrollspyHeadingPro">Proyectos</a></li>
+          </ul>
         </li>
       </ul>
-
-      <form class="d-flex">
-                                          <!-- ICONOS Y LOGIN -->
-        <div id="mail-icon">
+      <form class="d-flex gap-2">
+        <div
+          id="mail-icon"
+          class="collapse navbar-collapse"
+          id="navbarTogglerDemo01"
+        >
           <a
             type="button"
             data-bs-toggle="modal"
@@ -41,143 +64,145 @@
             ><i class="far fa-envelope"></i
           ></a>
         </div>
-
-        <div id="linkedin-icon">
+        <div
+          id="linkedin-icon"
+          class="collapse navbar-collapse"
+          id="navbarTogglerDemo01"
+        >
           <a
             href="http://www.linkedin.com/in/lautaro-bogado-591582224/"
             class="betene btn1 hover"
             ><i class="fab fa-linkedin"></i
           ></a>
         </div>
-
-        <div id="wpp-icon">
+        <div
+          id="wpp-icon"
+          class="collapse navbar-collapse"
+          id="navbarTogglerDemo01"
+        >
           <a href="https://wa.me/5493624104545" class="betene btn1 hover"
             ><i class="fab fa-whatsapp"></i
           ></a>
         </div>
-                                    <!-- Button trigger modal -->
-      <button
-      *ngIf="!usuarioLogueado"
-      type="button"
-      class="btn btn-success"
-      data-bs-toggle="modal"
-      data-bs-target="#loginModal"
-    >
-      Login
-    </button>
 
-    <h5 *ngIf="usuarioLogueado" id="usuarioBienvenida">¡Bienvenido, {{ username }}!</h5>
+        <button
+          *ngIf="!usuarioLogueado"
+          type="button"
+          class="btn btn-success"
+          data-bs-toggle="modal"
+          data-bs-target="#loginModal"
+        >
+          Login
+        </button>
 
-    <div *ngIf="usuarioLogueado" class="login-icon">
-      <button
-        (click)="desloguearUsuario()"
-        type="submit"
-        class="btn btn-danger"
-      >
-        Logout
-      </button>
+        <h5 *ngIf="usuarioLogueado" id="usuarioBienvenida">
+          ¡Bienvenido, {{ username }}!
+        </h5>
+
+        <div *ngIf="usuarioLogueado" class="login-icon">
+          <button
+            (click)="desloguearUsuario()"
+            type="submit"
+            class="btn btn-danger"
+          >
+            Logout
+          </button>
+        </div>
+      </form>
     </div>
-    </form>
+  </div>
+</nav>
 
-                                    <!-- MODAL DE INICIO DE SESION -->
+<!-- MODAL DE INICIO DE SESION -->
 
-      <div
-        class="modal fade"
-        id="loginModal"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h3 class="modal-title" id="exampleModalLabel">Iniciar Sesión</h3>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-                                            <!-- Cuerpo dentro del modal -->
-              <h5 class="modal-title" id="exampleModalLabel">
-                Ingrese su usuario:
-              </h5>
+<div
+  class="modal fade"
+  id="loginModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Iniciar Sesión</h3>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <!-- Cuerpo dentro del modal -->
+        <h5 class="modal-title" id="exampleModalLabel">Ingrese su usuario:</h5>
 
-              <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">Usuario</span>
-                <input
-                  type="text"
-                  class="form-control"
-                  [(ngModel)]="username"
-                  aria-label="Username"
-                  aria-describedby="basic-addon1"
-                />
-              </div>
-              <br />
-              <h5 class="modal-title" id="exampleModalLabel">
-                Ingrese su contraseña:
-              </h5>
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1">Usuario</span>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="username"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <br />
+        <h5 class="modal-title" id="exampleModalLabel">
+          Ingrese su contraseña:
+        </h5>
 
-              <div class="input-group">
-                <span class="input-group-text" id="basic-addon1"
-                  >Contraseña</span
-                >
-                <input
-                  type="password"
-                  class="form-control"
-                  [(ngModel)]="password"
-                  aria-label="Username"
-                  aria-describedby="basic-addon1"
-                />
-              </div>
-            </div>
-
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button
-                (click)="loguearUsuario()"
-                type="button"
-                class="btn btn-success"
-                data-bs-dismiss="modal"
-              >
-                Login
-              </button>
-            </div>
-          </div>
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1">Contraseña</span>
+          <input
+            type="password"
+            class="form-control"
+            [(ngModel)]="password"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+          />
         </div>
       </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button
+          (click)="loguearUsuario()"
+          type="button"
+          class="btn btn-success"
+          data-bs-dismiss="modal"
+        >
+          Login
+        </button>
+      </div>
     </div>
-  </nav>
+  </div>
 </div>
 
-                                    <!-- MODAL DE INICIO DE SESION -->
+<!-- MODAL DE INICIO DE CONTACTO -->
 
-      <div
-        class="modal fade"
-        id="mailContactModal"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <app-contact-form></app-contact-form>
-            </div>
-
+<div
+  class="modal fade"
+  id="mailContactModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <app-contact-form></app-contact-form>
+      </div>
+    </div>
+  </div>
+</div>
