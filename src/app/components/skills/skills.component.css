@@ -148,3 +148,9 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+
+.container-items{
+    margin-bottom: 40px;
+    margin-right: 25px;
+
+}

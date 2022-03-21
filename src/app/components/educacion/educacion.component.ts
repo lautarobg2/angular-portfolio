@@ -21,7 +21,7 @@ export class EducacionComponent implements OnInit {
 
   newEdu: educacion = newEDU;
 
-  eduSelected?: educacion;;
+  eduSelected?: educacion;
  
   faTimes = faTimes;
 

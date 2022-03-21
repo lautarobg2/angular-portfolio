@@ -20,8 +20,8 @@ const httpOptions = {
 })
 export class AllDataService {
 
-  apiUrlHeader: string = "http://localhost:3000/header/0";
-  apiUrlAcercaDe: string = "http://localhost:3000/acercade/0";
+  apiUrlHeader: string = "http://localhost:3000/header/1";
+  apiUrlAcercaDe: string = "http://localhost:3000/acercade/1";
   apiUrlEducacion: string = "http://localhost:3000/educacion";
   apiUrlExperiencia: string = "http://localhost:3000/experiencia";
   apiUrlSkills: string = "http://localhost:3000/skills";
@@ -54,6 +54,15 @@ export class AllDataService {
     return  this.http.get(this.apiUrlProyects);
   }
 
+
+
+                      // ACERCA DE 
+  
+    saveEditAcercaDe(acercade:acercade):Observable<acercade>{
+    return this.http.patch<acercade>(this.apiUrlAcercaDe, acercade, httpOptions)
+    }
+
+
                 
                       // EDUCACION
 
@@ -62,14 +71,15 @@ export class AllDataService {
     return this.http.delete<educacion>(url)
   }
 
-  saveEditEducacion(educacion?:educacion):Observable<educacion>{
-    const url = `${this.apiUrlEducacion}/${educacion?.id}`
-    return this.http.patch<educacion>(url, educacion, httpOptions)
-  }
-
   addEducacion(educacion:educacion):Observable<educacion>{
     return this.http.post<educacion>(this.apiUrlEducacion, educacion, httpOptions)
   }
+
+  saveEditEducacion(eduSelected?:educacion):Observable<educacion>{
+    return this.http.patch<educacion>(this.apiUrlEducacion, eduSelected, httpOptions)
+  }
+
+
 
 
                        // EXPERIENCIA  
@@ -82,6 +92,25 @@ export class AllDataService {
   addExperiencia(experiencia:experiencia):Observable<experiencia>{
     return this.http.post<experiencia>(this.apiUrlExperiencia, experiencia, httpOptions)
   }
+
+  saveEditExperiencia(expSelected?:experiencia):Observable<experiencia>{
+    return this.http.patch<experiencia>(this.apiUrlExperiencia, expSelected, httpOptions)
+  }
+
+
+                         // SKILLS
+
+  addSkill(skills:skills):Observable<skills>{
+    return this.http.post<skills>(this.apiUrlSkills, skills, httpOptions)
+  }                       
+                         
+  onDeleteSkill(skills:skills):Observable<skills>{
+    const url = `${this.apiUrlSkills}/${skills.id}`
+    return this.http.delete<skills>(url)
+  }
+
+
+
 
 
   

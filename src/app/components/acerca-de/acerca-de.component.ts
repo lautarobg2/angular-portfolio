@@ -11,12 +11,12 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class AcercaDeComponent implements OnInit {
 
-
   acercadeInfo: any;
 
   constructor(private AllDataService: AllDataService, public AuthService: AuthService) { }
 
   usuarioLogueado:boolean= false;
+
 
   receiveLoginEvent(){
     this.usuarioLogueado = this.AuthService.usuarioLogueado;
@@ -29,6 +29,12 @@ export class AcercaDeComponent implements OnInit {
         }
       );
     }
+
+  
+    onUpdate(){
+      this.AllDataService.saveEditAcercaDe(this.acercadeInfo);
+    }
+  
 
   
   }

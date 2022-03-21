@@ -14,10 +14,11 @@
   <div id="exp-text" class="card-body text-dark">
     <h4 id="scrollspyHeadingExp" class="card-title-title">Experiencia:</h4>
     <div>
-      <ul id="education-list" *ngFor="let item of experienciaInfo">
+      <ul id="education-list" *ngFor="let item of experienciaInfo; let i = index">
         <li>
       
           <div id="exp-delete-edit" *ngIf="AuthService.usuarioLogueado">
+
             <button class="betene btn1 hover">
               <fa-icon
                 [icon]="faTimes"
@@ -25,7 +26,12 @@
                 (click)="onDeleteExperiencia(item)"
               ></fa-icon>
             </button>
-            <button class="betene btn1 hover">
+
+            <button class="betene btn1 hover"
+            data-bs-toggle="modal"
+            data-bs-target="#expEditModal"
+            (click)="onSelectEdit(i)"
+            >
               <i class="fas fa-pencil-alt"></i>
             </button>
           </div>
@@ -58,13 +64,13 @@
   class="modal fade"
   id="experienciaModal"
   tabindex="-1"
-  aria-labelledby="exampleModalLabel"
+  aria-labelledby="exampleModalLabel1"
   aria-hidden="true"
 >
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLabel">
+        <h3 class="modal-title" id="exampleModalLabel1">
           Agregue su nueva experiencia laboral:
         </h3>
         <button
@@ -78,7 +84,7 @@
       <div class="modal-body">
         <!-- Cuerpo dentro del modal -->
 
-        <h5 class="modal-title" id="exampleModalLabel">Empresa:</h5>
+        <h5 class="modal-title" id="exampleModalLabel1">Empresa:</h5>
         <div class="input-group">
           <input
             type="text"
@@ -90,7 +96,7 @@
           />
         </div>
         <br />
-        <h5 class="modal-title" id="exampleModalLabel">Puesto:</h5>
+        <h5 class="modal-title" id="exampleModalLabel1">Puesto:</h5>
         <br />
         <div class="input-group">
           <input
@@ -103,7 +109,7 @@
           />
         </div>
         <br />
-        <h5 class="modal-title" id="exampleModalLabel">Inicio - Final:</h5>
+        <h5 class="modal-title" id="exampleModalLabel1">Inicio - Final:</h5>
         <div class="input-group">
           <input
             type="text"
@@ -127,6 +133,90 @@
           data-bs-dismiss="modal"
         >
           Add
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL DEL EDIT -->
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="expEditModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel2"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel2">
+          Edite su experiencia laboral:
+        </h3>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Cuerpo dentro del modal -->
+
+        <h5 class="modal-title" id="exampleModalLabel2">Empresa:</h5>
+        <div class="input-group">
+          <input
+            type="text"
+            name="title"
+            id="title"
+            *ngIf="expSelected"
+            [(ngModel)]="expSelected.title"
+            class="form-control"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <br />
+        <h5 class="modal-title" id="exampleModalLabel2">Puesto:</h5>
+        <br />
+        <div class="input-group">
+          <input
+            type="text"
+            name="description"
+            id="description"
+            *ngIf="expSelected"
+            [(ngModel)]="expSelected.description"
+            class="form-control"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <br />
+        <h5 class="modal-title" id="exampleModalLabel2">Inicio - Final:</h5>
+        <div class="input-group">
+          <input
+            type="text"
+            name="time"
+            id="time"
+            *ngIf="expSelected"
+            [(ngModel)]="expSelected.time"
+            class="form-control"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button
+          type="button"
+          (click)="onUpdate()"
+          class="btn btn-success"
+          data-bs-dismiss="modal"
+        >
+          Save
         </button>
       </div>
     </div>

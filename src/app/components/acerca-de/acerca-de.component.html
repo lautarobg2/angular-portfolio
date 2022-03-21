@@ -10,6 +10,8 @@
   style="max-width: 80rem"
 >
   <button
+  data-bs-toggle="modal"
+  data-bs-target="#acercaDeEditModal"
     id="edit"
     *ngIf="AuthService.usuarioLogueado"
     class="betene btn1 hover"
@@ -22,3 +24,62 @@
     <p class="card-text">{{ acercadeInfo.description }}</p>
   </div>
 </div>
+
+
+<!-- MODAL DEL EDIT -->
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="acercaDeEditModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">
+          Edite su descripción:
+        </h3>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Cuerpo dentro del modal -->
+
+        <h5 class="modal-title" id="exampleModalLabel">Descripción:</h5>
+        <div class="input-group">
+          <input
+            type="text"
+            name="title"
+            id="title"
+            [(ngModel)]="acercadeInfo.description"            
+            class="form-control"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <br />
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button
+        (click)="onUpdate()"
+          type="button"
+          class="btn btn-success"
+          data-bs-dismiss="modal"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+

@@ -6,17 +6,28 @@
   <h4 id="scrollspyHeadingSkills" class="title">Hard & Soft Skills:</h4>
 
   <div id="sk-edit" *ngIf="AuthService.usuarioLogueado">
-    <button class="betene btn1 hover"><i class="fas fa-pencil-alt"></i></button>
+    <button
+      class="betene btn1 hover"
+      data-bs-toggle="modal"
+      data-bs-target="#skillEditModal"
+    >
+      <i class="fas fa-pencil-alt"></i>
+    </button>
   </div>
 
   <div id="sk-plus" *ngIf="AuthService.usuarioLogueado">
-    <button class="betene btn1 hover"><i class="fas fa-plus"></i></button>
+    <button 
+    class="betene btn1 hover"
+    data-bs-toggle="modal"
+    data-bs-target="#skillsModal"
+    >
+    <i class="fas fa-plus"></i>
+  </button>
   </div>
 
-  <div class="contiene-progress col-10" 
-  >
+  <div id="skill-item-card" class="contiene-progress col-10">
     <circle-progress
-    *ngFor="let skill of skillsInfo"
+      *ngFor="let skill of skillsInfo; let i = index"
       [radius]="65"
       [outerStrokeWidth]="10"
       [innerStrokeWidth]="10"
@@ -26,21 +37,185 @@
       [responsive]="false"
       [animationDuration]="1000"
       [subtitleFontSize]="'20'"
-      [percent]="skill.title"
+      [percent]="skill.porcentaje"
       [title]="skill.title"
       [subtitle]="skill.subtitle"
       [outerStrokeColor]="skill.outerStrokeColor"
       [imageHeight]="60"
       [imageWidth]="60"
     ></circle-progress>
-
-    <button class="betene btn1 hover" *ngIf="AuthService.usuarioLogueado">
-      <fa-icon
-        [icon]="faTimes"
-        [ngStyle]="{ color: 'red' }"
-      ></fa-icon>
-    </button>
-
   </div>
+</div>
 
+<!-- MODAL DEL EDIT -->
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="skillEditModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel2"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel2">
+          Edite sus Hard & Soft Skills:
+        </h3>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Cuerpo dentro del modal -->
+
+        <div
+          class="input-group"
+        >
+        <div class="container-items" *ngFor="let skill of skillsInfo; let i = index"
+        >
+          <h5 class="modal-title" id="exampleModalLabel1">{{skill.subtitle}}</h5>
+          <h6 class="modal-title" id="exampleModalLabel1">Habilidad:</h6>
+          <div class="input-group">
+            <input
+              type="text"
+              name="title"
+              id="title"
+              [(ngModel)]="skill.subtitle"
+              class="form-control"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <h6 class="modal-title" id="exampleModalLabel1">Porcentaje de Habilidad:</h6>
+          <div class="input-group">
+            <input
+              type="text"
+              name="description"
+              id="description"
+              [(ngModel)]="skill.porcentaje"
+              class="form-control"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <h6 class="modal-title" id="exampleModalLabel1">Color/Código de Color:</h6>
+          <div class="input-group">
+            <input
+              type="text"
+              name="time"
+              id="time"
+              [(ngModel)]="skill.outerStrokeColor"
+              class="form-control"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <br />
+          <button
+          (click)="onDeleteSkill(skill)"
+          type="button"
+          class="btn btn-danger"
+        >
+          Eliminar Skill
+        </button>
+        </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+          Save
+        </button>
+      </div>
+    </div>
   </div>
+</div>
+
+
+<!-- MODAL -->
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="skillsModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel1"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel1">
+          Agregue su nueva Hard/Soft Skill:
+        </h3>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Cuerpo dentro del modal -->
+
+        <h5 class="modal-title" id="exampleModalLabel1">Skill:</h5>
+        <div class="input-group">
+          <input
+            type="text"
+            name="title"
+            id="title"
+            [(ngModel)]="newSK.subtitle"
+            class="form-control"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <br />
+        <h5 class="modal-title" id="exampleModalLabel1">Porcentaje de conocimiento:</h5>
+        <br />
+        <div class="input-group">
+          <input
+            type="text"
+            name="description"
+            id="description"
+            [(ngModel)]="newSK.porcentaje"
+            [(ngModel)]="newSK.title"
+            class="form-control"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <br />
+        <h5 class="modal-title" id="exampleModalLabel1">Color/Código de color:</h5>
+        <div class="input-group">
+          <input
+            type="text"
+            name="time"
+            id="time"
+            [(ngModel)]="newSK.outerStrokeColor"
+            class="form-control"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button
+          type="button"
+          (click)="addSkill(newSK)"
+          class="btn btn-success"
+          data-bs-dismiss="modal"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+

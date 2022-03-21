@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
 
 
   loguearUsuario(){
-    if(this.username==="1" && this.password==="1"){
+    if(this.username==="lautarobg2" && this.password==="myportfolio99"){
       this.usuarioLogueado = true;
       this.AuthService.usuarioLogueado = true;
     }else{

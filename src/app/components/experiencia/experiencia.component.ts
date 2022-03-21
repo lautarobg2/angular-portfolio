@@ -17,17 +17,14 @@ export class ExperienciaComponent implements OnInit {
 
                //  VARIABLES MODAL DE AGREGAR NUEVO ESTUDIO
 
-  id?: number;
-  img: string = "";
-  title: string = "";
-  description: string = "";
-  time: string = "";
+  experienciaInfo: experiencia[] = [];
+             
+  newExp: experiencia = newEXP;
 
-newExp: experiencia = newEXP;
+  expSelected?: experiencia;
 
-faTimes = faTimes;
+  faTimes = faTimes;
 
-experienciaInfo: experiencia[] = [];
 
 
   constructor(private AllDataService: AllDataService, public AuthService: AuthService, private UiService: UiService) { }
@@ -39,9 +36,6 @@ experienciaInfo: experiencia[] = [];
   }
 
   ngOnInit(): void {
-
-    const { id, img, title, description, time } = this
-    const newEdu = { id, img, title, description, time }
 
     this.AllDataService.getDatosExperiencia().subscribe(
       (data) => {
@@ -67,6 +61,15 @@ experienciaInfo: experiencia[] = [];
       })
     })
   }
+
+  onSelectEdit(index: number){
+    this.expSelected = this.experienciaInfo[index];
+  }
+
+  onUpdate(){
+    this.AllDataService.saveEditExperiencia(this.expSelected);
+  }
+
 
 
 

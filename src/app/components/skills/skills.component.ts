@@ -3,8 +3,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { AllDataService } from 'src/app/services/all-data.service';
 import { skills } from 'src/app/data/skills-interface';
 import { NgCircleProgressModule } from 'ng-circle-progress';
-import { faTimes} from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from 'src/app/services/auth.service';
+import { newSK } from 'src/app/mocks/mockSkill';
 
 
 
@@ -15,9 +15,9 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class SkillsComponent implements OnInit {
 
-  faTimes = faTimes;
+  newSK: skills = newSK;
 
-  skillsInfo: any;
+  skillsInfo: skills[] = [];
 
   constructor(private AllDataService: AllDataService, public AuthService: AuthService) { }
 
@@ -29,5 +29,23 @@ export class SkillsComponent implements OnInit {
     );
 
   }
+
+  addSkill(skills:skills){
+    this.AllDataService.addSkill(skills).subscribe((skills) => (
+      this.skillsInfo.push(skills)
+    ));
+  }
+
+
+  onDeleteSkill(skills:skills){
+    this.AllDataService.onDeleteSkill(skills)
+    .subscribe( 
+      ()=>{
+      this.skillsInfo = this.skillsInfo.filter( (t) => {
+        return t.id !== skills.id
+      })
+    })
+  }
+
 
 }

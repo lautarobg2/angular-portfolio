@@ -1,23 +1,19 @@
 {
   "header": [
     {
-      "id": 0,
-      "profile": "../assets/img/pato.jpg",
+      "id": 1,
+      "profile": "../assets/img/profile.jpeg",
       "nombre": "Lautaro Alejandro Bogado",
       "titulo": "Full Stack Developer Junior",
       "banner": "./assets/img/blue.png"
     }
   ],
-
-
   "acercade": [
     {
-      "id": 0,
+      "id": 1,
       "description": "Soy una persona que destaca en responsabilidad, orden y puntualidad, cuento con muy buenas habilidades comunicativas. Aprendo y me adapto rápido, busco continuar desarrollándome como profesional."
     }
   ],
-
-
   "educacion": [
     {
       "id": 1,
@@ -32,10 +28,15 @@
       "time": "2021 - 2021",
       "title": "Argentina Programa - 1er Etapa: #SéProgramar",
       "description": "Ministerio de Desarrollo Productivo CESSI"
+    },
+    {
+      "id": 3,
+      "img": "../assets/img/provisonal.jpg",
+      "title": "aa",
+      "time": "aa",
+      "description": "aa"
     }
   ],
-
-
   "experiencia": [
     {
       "id": 1,
@@ -43,32 +44,41 @@
       "time": "2021 - Actualidad",
       "title": "Clínica S.A.L.L.U.D",
       "description": "Administrativo y Secretario"
+    },
+    {
+      "id": 4,
+      "img": "",
+      "time": "prueba1",
+      "title": "prueba1",
+      "description": "prueba1"
     }
   ],
-
-
   "skills": [
     {
       "id": 1,
       "title": "80",
+      "porcentaje": 80,
       "subtitle": "HTML",
       "outerStrokeColor": "#DF7923"
     },
     {
       "id": 2,
-      "title": "80",
+      "title": "50",
+      "porcentaje": 50,
       "subtitle": "CSS",
       "outerStrokeColor": "blue"
     },
     {
       "id": 3,
-      "title": "60",
+      "title": "50",
+      "porcentaje": 50,
       "subtitle": "ANGULAR",
       "outerStrokeColor": "#C60909"
     },
     {
       "id": 4,
-      "title": "90",
+      "title": "70",
+      "porcentaje": 70,
       "subtitle": "BOOTSTRAP",
       "outerStrokeColor": "purple"
     },
@@ -76,29 +86,45 @@
       "id": 5,
       "title": "90",
       "subtitle": "GIT",
+      "porcentaje": 90,
       "outerStrokeColor": "black"
     },
     {
       "id": 6,
       "title": "100",
+      "porcentaje": 100,
       "subtitle": "Team Work",
       "outerStrokeColor": "grey"
     },
     {
       "id": 7,
       "title": "80",
+      "porcentaje": 80,
       "subtitle": "MySQL",
       "outerStrokeColor": "#0E1978"
     },
     {
       "id": 8,
       "title": "100",
+      "porcentaje": 100,
       "subtitle": "Cap. Adaptarse",
       "outerStrokeColor": "#03B210"
+    },
+    {
+      "id": 9,
+      "title": "",
+      "porcentaje": "99",
+      "subtitle": "Mario Kart",
+      "outerStrokeColor": "red"
+    },
+    {
+      "id": 10,
+      "title": "88",
+      "porcentaje": "88",
+      "subtitle": "sisi",
+      "outerStrokeColor": "blue"
     }
   ],
-
-
   "proyects": [
     {
       "id": 1,
