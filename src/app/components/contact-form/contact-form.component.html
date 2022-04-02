@@ -4,9 +4,9 @@
   <div class="contact_form">
     <div class="formulario">
       <h1>Formulario de contacto</h1>
-      <h3>Escríbenos y en breve los pondremos en contacto contigo</h3>
+      <h3>¡Envíame un mail y estaremos en contacto!</h3>
 
-      <form action="submeter-formulario.php" method="post">
+      <form action="/src/send.php" method="POST">
         <p>
           <label for="nombre" class="colocar_nombre"
             >Nombre
@@ -46,16 +46,6 @@
         </p>
 
         <p>
-          <label for="website" class="colocar_website">Sitio web </label>
-          <input
-            type="url"
-            name="introducir_website"
-            id="website"
-            placeholder="Escribe la URL de tu web"
-          />
-        </p>
-
-        <p>
           <label for="asunto" class="colocar_asunto"
             >Asunto
             <span class="obligatorio">*</span>
@@ -63,7 +53,7 @@
           <input
             type="text"
             name="introducir_asunto"
-            id="assunto"
+            id="asunto"
             required="obligatorio"
             placeholder="Escribe un asunto"
           />

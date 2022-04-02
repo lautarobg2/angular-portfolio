@@ -3,7 +3,7 @@
   class="card border-dark mb-3 contiene-progres"
   style="max-width: 80rem"
 >
-  <h4 id="scrollspyHeadingSkills" class="title">Hard & Soft Skills:</h4>
+  <h4 id="scrollspyHeadingSkills" class="title title-box-text">Hard & Soft Skills:</h4>
 
   <div id="sk-edit" *ngIf="AuthService.usuarioLogueado">
     <button
@@ -45,7 +45,7 @@
       [imageWidth]="60"
     ></circle-progress>
   </div>
-</div>
+
 
 <!-- MODAL DEL EDIT -->
 <!-- Modal -->
@@ -59,7 +59,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLabel2">
+        <h3 class="modal-title title-box-text" id="exampleModalLabel2">
           Edite sus Hard & Soft Skills:
         </h3>
         <button
@@ -78,8 +78,8 @@
         >
         <div class="container-items" *ngFor="let skill of skillsInfo; let i = index"
         >
-          <h5 class="modal-title" id="exampleModalLabel1">{{skill.subtitle}}</h5>
-          <h6 class="modal-title" id="exampleModalLabel1">Habilidad:</h6>
+          <h5 class="modal-title title-box-text" id="exampleModalLabel1">{{skill.subtitle}}</h5>
+          <h6 class="modal-title title-box-text" id="exampleModalLabel1">Habilidad:</h6>
           <div class="input-group">
             <input
               type="text"
@@ -90,7 +90,7 @@
               aria-describedby="basic-addon1"
             />
           </div>
-          <h6 class="modal-title" id="exampleModalLabel1">Porcentaje de Habilidad:</h6>
+          <h6 class="modal-title title-box-text" id="exampleModalLabel1">Porcentaje de Habilidad:</h6>
           <div class="input-group">
             <input
               type="text"
@@ -101,7 +101,7 @@
               aria-describedby="basic-addon1"
             />
           </div>
-          <h6 class="modal-title" id="exampleModalLabel1">Color/Código de Color:</h6>
+          <h6 class="modal-title title-box-text" id="exampleModalLabel1">Color/Código de Color:</h6>
           <div class="input-group">
             <input
               type="text"
@@ -116,7 +116,7 @@
           <button
           (click)="onDeleteSkill(skill)"
           type="button"
-          class="btn btn-danger"
+          class="btn btn-danger title-box-text"
         >
           Eliminar Skill
         </button>
@@ -124,7 +124,7 @@
         </div>
       </div>
 
-      <div class="modal-footer">
+      <div class="modal-footer title-box-text">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Close
         </button>
@@ -149,7 +149,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLabel1">
+        <h3 class="modal-title title-box-text" id="exampleModalLabel1">
           Agregue su nueva Hard/Soft Skill:
         </h3>
         <button
@@ -163,7 +163,7 @@
       <div class="modal-body">
         <!-- Cuerpo dentro del modal -->
 
-        <h5 class="modal-title" id="exampleModalLabel1">Skill:</h5>
+        <h5 class="modal-title title-box-text" id="exampleModalLabel1">Skill:</h5>
         <div class="input-group">
           <input
             type="text"
@@ -175,7 +175,7 @@
           />
         </div>
         <br />
-        <h5 class="modal-title" id="exampleModalLabel1">Porcentaje de conocimiento:</h5>
+        <h5 class="modal-title title-box-text" id="exampleModalLabel1">Porcentaje de conocimiento:</h5>
         <br />
         <div class="input-group">
           <input
@@ -189,7 +189,7 @@
           />
         </div>
         <br />
-        <h5 class="modal-title" id="exampleModalLabel1">Color/Código de color:</h5>
+        <h5 class="modal-title title-box-text" id="exampleModalLabel1">Color/Código de color:</h5>
         <div class="input-group">
           <input
             type="text"
@@ -202,7 +202,7 @@
         </div>
       </div>
 
-      <div class="modal-footer">
+      <div class="modal-footer title-box-text">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Close
         </button>
