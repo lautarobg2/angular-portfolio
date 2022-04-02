@@ -68,6 +68,7 @@ export class EducacionComponent implements OnInit {
 
   onUpdate(){
     this.AllDataService.saveEditEducacion(this.eduSelected);
+    console.log(this.eduSelected);
   }
 
 
