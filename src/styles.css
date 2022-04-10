@@ -1,18 +1,7 @@
-#wpp-icon{
+.icono-redes{
     display: flex;
     align-items: center;
-    margin-right: 0.950em;
-}
-#mail-icon{
-    display: flex;
-    align-items: center;
-    margin-right: 0.625em;
-}
-
-#linkedin-icon{
-    display: flex;
-    align-items: center;
-    margin-right: 0.625em;
+    margin-right: 0.300em;
 }
 
 .nav-item a{
@@ -27,6 +16,7 @@
 .imput-password{
     margin-right: 0.313em;
 }
+
 #profile{
     width: 9.375em;
     height: 9.375em;
@@ -36,50 +26,27 @@
     margin-top: 15em;
     margin-left: 3.438em;
 }
-#contenedor-todo-header{
-    position: relative;
-}
 
 #blue-banner{
     width: 100%;
     height: 31.25em;
 }
 
-#nombre{
-    font-family: 'Poppins', sans-serif;
-    
-}
-#titulo{
-    font-family: 'Poppins', sans-serif;
-}
+
 #contenedor-nombre-titulo{
     width: auto;
     margin-left: 14.375em;
     margin-top: 17.5em;
     position: absolute;
+    font-family: 'Poppins', sans-serif;
 }
 
-#acerca-de{
+.seccion-info{
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0 0 3px 3px rgba(0, 0, 0, 4);
     position:relative;
 }
-
-#experiencia{
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 4);
-    position: relative;
-}
-
-#skills{
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 4);
-    position: relative;
-}
-
 
 
 .title-box-text{
@@ -88,40 +55,15 @@
 
 
 
-
-#plus{
-    position: absolute;
-    right: 2.188em;
-    top: 0.313em;
-}
-
-#edit{
-    position: absolute;
-    top: 0.313em;
-    right: 0.313em;
-}
-
-#educacion{
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 4);
-    position: relative;
-}
-
-.descripcion-educacion{
-    font-size: 0.938em;
-}
-
-.education-text{
-    width: 56.25em;
-    display: flex;
-}
-
 #education-list{
     font-family: "Poppins", sans-serif;
     font-size: 1.563em;
     list-style: none;
 } 
+
+.list-group{
+    margin-left: 10px !important; 
+}
 
 
 .card-title-title{
@@ -131,27 +73,6 @@
     justify-content: space-evenly;
     align-items: center;
     font-weight: bold;
-}
-
-#salud-icon{
-    margin-top: 0.938em;
-    margin-right: 0.938em;
-}
-
-#argprog-icon{
-    margin-top: 1.563em;
-    margin-right: 0.600em;
-}
-
-#school-icon{
-    margin-right: 0.938em;
-    margin-top: 0.600em;
-}
-
-#skills{
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 4);
 }
 
 
@@ -171,15 +92,35 @@
     
 }
 
+              /*BOTONES EDITAR AGREGAR ELIMINAR Y REDES SOCIALES*/
 
-#word-icon{
-  width: 20px;
-  margin-left: 20px;
+.betene {
+    color: #0099CC;
+    background: transparent;
+    border: 2px solid #0099CC;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    padding: 3px 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.btn1 {
+      background-color: white; 
+      color: black; 
+      border: 2px solid #008CBA;
+}
+.btn1:hover {
+    background-color: #008CBA;
+    color: white;
 }
 
-.progress-bar{
-    border-radius: 5px;
-}
 
 
 

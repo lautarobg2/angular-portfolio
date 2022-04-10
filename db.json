@@ -11,7 +11,7 @@
   "acercade": [
     {
       "id": 1,
-      "description": "Soy una persona que destaca en responsabilidad, orden y puntualidad, cuento con muy buenas habilidades comunicativas. Aprendo y me adapto rápido, busco continuar desarrollándome como profesional."
+      "description": "DB: Soy una persona que destaca en responsabilidad, orden y puntualidad, cuento con muy buenas habilidades comunicativas. Aprendo y me adapto rápido, busco continuar desarrollándome como profesional."
     }
   ],
   "educacion": [
@@ -28,14 +28,9 @@
       "time": "2021 - 2021",
       "title": "Argentina Programa - 1er Etapa: #SéProgramar",
       "description": "Ministerio de Desarrollo Productivo CESSI"
-    },
-    {
-      "id": 3,
-      "img": "../assets/img/provisonal.jpg",
-      "title": "aa",
-      "time": "aa",
-      "description": "aa"
     }
+
+
   ],
   "experiencia": [
     {
@@ -44,14 +39,9 @@
       "time": "2021 - Actualidad",
       "title": "Clínica S.A.L.L.U.D",
       "description": "Administrativo y Secretario"
-    },
-    {
-      "id": 4,
-      "img": "",
-      "time": "prueba1",
-      "title": "prueba1",
-      "description": "prueba1"
     }
+
+
   ],
   "skills": [
     {
@@ -109,21 +99,9 @@
       "porcentaje": 100,
       "subtitle": "Cap. Adaptarse",
       "outerStrokeColor": "#03B210"
-    },
-    {
-      "id": 9,
-      "title": "",
-      "porcentaje": "99",
-      "subtitle": "Mario Kart",
-      "outerStrokeColor": "red"
-    },
-    {
-      "id": 10,
-      "title": "88",
-      "porcentaje": "88",
-      "subtitle": "sisi",
-      "outerStrokeColor": "blue"
     }
+
+    
   ],
   "proyects": [
     {
