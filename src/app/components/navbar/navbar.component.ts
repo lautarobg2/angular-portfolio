@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AuthService } from "src/app/services/auth.service";
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -10,34 +12,49 @@ import { FormsModule } from '@angular/forms';
 })
 export class NavbarComponent implements OnInit {
 
+  usuarioLogueado: Boolean = false;
+  form: FormGroup;
+  loginError: Boolean = false;
 
-  usuarioLogueado: boolean = false;
-
-  username: string = "";
-  password: string = "";
-
-
-  loguearUsuario(){
-    if(this.username==="lautarobg2" && this.password==="myportfolio99"){
-      this.usuarioLogueado = true;
-      this.AuthService.usuarioLogueado = true;
-    }else{
-      alert("Nombre de usuario y/o contraseña son incorrectos");
-    }
-     
+  constructor(private AuthService: AuthService, private formBuilder: FormBuilder, private router: Router,) 
+  {
+    this.form = this.formBuilder.group(
+      {
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required, Validators.minLength(10)]]
+      }
+    )
   }
- 
- desloguearUsuario(){
-   this.usuarioLogueado = false;
-   this.AuthService.usuarioLogueado = false;
- }
-
-  constructor(private AuthService: AuthService) { }
   
 
   ngOnInit(): void {
 
+    this.usuarioLogueado = this.AuthService.usuarioLogueado();
+
     }
+
+    onSubmit(event: Event) {
+      event.preventDefault;
+
+      this.AuthService.login(this.form.value).subscribe(
+        (response: Boolean) => {
+          if (response)
+            this.router.navigate(['/home']);
+          else
+            this.loginError = true;
+        }
+      );
+    }
+
+
+  get Email() {
+    return this.form.get('email');
+  }
+
+  get Password() {
+    return this.form.get('password');
+  }
+
 
   }
 

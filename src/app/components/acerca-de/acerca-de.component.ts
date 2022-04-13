@@ -13,19 +13,20 @@ export class AcercaDeComponent implements OnInit {
 
   acercadeInfo: any;
 
+  usuarioLogueado: Boolean = false;
+
   constructor(private AllDataService: AllDataService, public AuthService: AuthService) { }
 
-  usuarioLogueado:boolean= false;
-
-
-  receiveLoginEvent(){
-    this.usuarioLogueado = this.AuthService.usuarioLogueado;
-  }
   
   ngOnInit(): void {
+
+    this.usuarioLogueado = this.AuthService.usuarioLogueado();
+
+
       this.AllDataService.getDatosAcercaDe().subscribe(
         (data) => {
           this.acercadeInfo = data;
+          console.log(data);
         }
       );
     }

@@ -14,12 +14,19 @@ export class HeaderComponent implements OnInit {
 
   headerInfo: any;
 
+  usuarioLogueado: Boolean = false;
+
   constructor(private AllDataService: AllDataService, public AuthService: AuthService) { }
 
   ngOnInit(): void {
+
+    this.usuarioLogueado = this.AuthService.usuarioLogueado();
+
+
     this.AllDataService.getDatosHeader().subscribe(
       (data) => {
         this.headerInfo = data;
+        console.log(data);
       }
     );
   }

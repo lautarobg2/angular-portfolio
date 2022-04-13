@@ -25,17 +25,17 @@ export class ExperienciaComponent implements OnInit {
 
   faTimes = faTimes;
 
+  usuarioLogueado: Boolean = false;
 
 
   constructor(private AllDataService: AllDataService, public AuthService: AuthService, private UiService: UiService) { }
 
-  usuarioLogueado:boolean= false;
 
-  receiveLoginEvent(){
-    this.usuarioLogueado = this.AuthService.usuarioLogueado;
-  }
 
   ngOnInit(): void {
+
+    this.usuarioLogueado = this.AuthService.usuarioLogueado();
+
 
     this.AllDataService.getDatosExperiencia().subscribe(
       (data) => {

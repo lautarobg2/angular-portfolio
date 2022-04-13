@@ -6,6 +6,7 @@ import{ educacion } from "src/app/data/educacion-interface"
 import{ experiencia } from "src/app/data/experiencia-interface"
 import{ header } from "src/app/data/header-interface"
 import{ skills } from "src/app/data/skills-interface"
+import { proyects } from "src/app/data/proyects-interface"
 
 
 const httpOptions = {
@@ -20,38 +21,38 @@ const httpOptions = {
 })
 export class AllDataService {
 
-  apiUrlHeader: string = "http://localhost:3000/header/1";
-  apiUrlAcercaDe: string = "http://localhost:3000/acercade/1";
-  apiUrlEducacion: string = "http://localhost:3000/educacion";
-  apiUrlExperiencia: string = "http://localhost:3000/experiencia";
-  apiUrlSkills: string = "http://localhost:3000/skills";
+  apiUrlHeader: string = "http://localhost:8080/header";
+  apiUrlAcercaDe: string = "http://localhost:8080/about";
+  apiUrlEducacion: string = "http://localhost:8080/education";
+  apiUrlExperiencia: string = "http://localhost:8080/experience";
+  apiUrlSkills: string = "http://localhost:8080/skills";
   apiUrlProyects: string = "http://localhost:3000/proyects";
 
 
   constructor( private http: HttpClient) { }
 
-  getDatosHeader():Observable<any>{
-    return  this.http.get(this.apiUrlHeader);
+  getDatosHeader():Observable<header[]>{
+    return  this.http.get<any>(this.apiUrlHeader);
   }
 
-  getDatosAcercaDe():Observable<any>{
-    return  this.http.get(this.apiUrlAcercaDe);
+  getDatosAcercaDe():Observable<acercade[]>{
+    return  this.http.get<any>(this.apiUrlAcercaDe);
   }
 
-  getDatosEducacion():Observable<any>{
-    return  this.http.get(this.apiUrlEducacion);
+  getDatosEducacion():Observable<educacion[]>{
+    return  this.http.get<any>(this.apiUrlEducacion);
   }
 
-  getDatosExperiencia():Observable<any>{
-    return  this.http.get(this.apiUrlExperiencia);
+  getDatosExperiencia():Observable<experiencia[]>{
+    return  this.http.get<any>(this.apiUrlExperiencia);
   }
 
-  getDatosSkills():Observable<any>{
-    return  this.http.get(this.apiUrlSkills);
+  getDatosSkills():Observable<skills[]>{
+    return  this.http.get<any>(this.apiUrlSkills);
   }
 
-  getDatosProyects():Observable<any>{
-    return  this.http.get(this.apiUrlProyects);
+  getDatosProyects():Observable<proyects[]>{
+    return  this.http.get<any>(this.apiUrlProyects);
   }
 
 

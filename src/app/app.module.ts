@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 
@@ -17,6 +17,7 @@ import { ExperienciaComponent } from './components/experiencia/experiencia.compo
 import { SkillsComponent } from './components/skills/skills.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { ProyectsComponent } from './components/proyects/proyects.component';
+import { RouterModule, Routes } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -33,10 +34,13 @@ import { ProyectsComponent } from './components/proyects/proyects.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
+    RouterModule.forRoot([]),
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,  
     CommonModule,
+    ReactiveFormsModule,
     NgCircleProgressModule.forRoot({
       backgroundGradient: true,
       backgroundColor: "#ffffff",

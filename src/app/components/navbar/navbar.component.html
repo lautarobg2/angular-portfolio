@@ -95,12 +95,12 @@
         </button>
 
         <h5 *ngIf="usuarioLogueado" id="usuarioBienvenida">
-          ¡Bienvenido, {{ username }}!
+          ¡Bienvenido, Lautaro!
         </h5>
 
         <div *ngIf="usuarioLogueado" class="login-icon">
           <button
-            (click)="desloguearUsuario()"
+            
             type="submit"
             class="btn btn-danger"
           >
@@ -121,6 +121,7 @@
   aria-labelledby="exampleModalLabel"
   aria-hidden="true"
 >
+
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -134,19 +135,30 @@
       </div>
       <div class="modal-body">
         <!-- Cuerpo dentro del modal -->
-        <h5 class="modal-title" id="exampleModalLabel">Ingrese su usuario:</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Ingrese su email:</h5>
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
 
         <div class="input-group">
-          <span class="input-group-text" id="basic-addon1">Usuario</span>
+          <span class="input-group-text" id="basic-addon1">Email</span>
           <input
+            formControlName="email"
+            name="email"
             type="text"
             class="form-control"
-            [(ngModel)]="username"
-            aria-label="Username"
             aria-describedby="basic-addon1"
+            [ngClass]="{'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched }"
           />
+
+          <div *ngIf="Email?.errors && Email?.touched">
+            <span *ngIf="Email?.hasError('required')" class="text-danger">Es necesario que introduzca el email.</span>
+            <span *ngIf="Email?.hasError('email')" class="text-danger">El email ingresado no respeta el formato esperado.</span>
+         </div>
+
         </div>
+
         <br />
+
         <h5 class="modal-title" id="exampleModalLabel">
           Ingrese su contraseña:
         </h5>
@@ -154,27 +166,34 @@
         <div class="input-group">
           <span class="input-group-text" id="basic-addon1">Contraseña</span>
           <input
+            formControlName="password"
+            name="password"
             type="password"
             class="form-control"
-            [(ngModel)]="password"
-            aria-label="Username"
             aria-describedby="basic-addon1"
-          />
+            [ngClass]="{'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched }"
+          >
         </div>
+        </form>
       </div>
-
+    
       <div class="modal-footer">
+
+
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Close
         </button>
+
         <button
-          (click)="loguearUsuario()"
-          type="button"
+          [disabled]="form.invalid"
+          type="submit"
           class="btn btn-success"
           data-bs-dismiss="modal"
         >
           Login
         </button>
+
+
       </div>
     </div>
   </div>

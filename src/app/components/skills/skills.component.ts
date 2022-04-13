@@ -19,9 +19,14 @@ export class SkillsComponent implements OnInit {
 
   skillsInfo: skills[] = [];
 
+  usuarioLogueado: Boolean = false;
+
   constructor(private AllDataService: AllDataService, public AuthService: AuthService) { }
 
   ngOnInit(): void {
+
+    this.usuarioLogueado = this.AuthService.usuarioLogueado();
+
     this.AllDataService.getDatosSkills().subscribe(
       (data) => {
         this.skillsInfo = data;
