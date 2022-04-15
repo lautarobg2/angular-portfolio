@@ -25,8 +25,7 @@ export class HeaderComponent implements OnInit {
 
     this.AllDataService.getDatosHeader().subscribe(
       (data) => {
-        this.headerInfo = data;
-        console.log(data);
+        this.headerInfo = data[0];
       }
     );
   }

@@ -39,8 +39,9 @@ export class NavbarComponent implements OnInit {
       this.AuthService.login(this.form.value).subscribe(
         (response: Boolean) => {
           if (response)
-            this.router.navigate(['/home']);
+            window.location.reload();
           else
+            window.alert("El email y/o contraseña son incorrectos!");
             this.loginError = true;
         }
       );
@@ -53,6 +54,12 @@ export class NavbarComponent implements OnInit {
 
   get Password() {
     return this.form.get('password');
+  }
+
+  logOut(): void {
+    this.AuthService.logOut();
+    this.usuarioLogueado = false;
+    window.location.reload();
   }
 
 

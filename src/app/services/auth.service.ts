@@ -14,17 +14,17 @@ export class AuthService {
     return this.http.post<Boolean>("http://localhost:8080/login", credentials).pipe(
       tap((response: Boolean) => {
         if (response)
-          sessionStorage.setItem("user", "lautarobg2");
+          sessionStorage.setItem("isUserLogged", "lautaro");
       })
     );
   }
 
   public logOut() {
-    sessionStorage.removeItem("user");
+    sessionStorage.removeItem("isUserLogged");
   }
 
   public usuarioLogueado():boolean {
-    return sessionStorage.getItem("user") !== null;
+    return sessionStorage.getItem("isUserLogged") !== null;
   }
 
 }

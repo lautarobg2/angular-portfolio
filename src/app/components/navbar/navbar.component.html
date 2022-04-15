@@ -103,6 +103,7 @@
             
             type="submit"
             class="btn btn-danger"
+            (click)="logOut()"
           >
             Logout
           </button>
@@ -137,7 +138,7 @@
         <!-- Cuerpo dentro del modal -->
         <h5 class="modal-title" id="exampleModalLabel">Ingrese su email:</h5>
 
-        <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
+        <form [formGroup]="form">
 
         <div class="input-group">
           <span class="input-group-text" id="basic-addon1">Email</span>
@@ -148,6 +149,7 @@
             class="form-control"
             aria-describedby="basic-addon1"
             [ngClass]="{'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched }"
+            required
           />
 
           <div *ngIf="Email?.errors && Email?.touched">
@@ -171,8 +173,12 @@
             type="password"
             class="form-control"
             aria-describedby="basic-addon1"
-            [ngClass]="{'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched }"
+            required
           >
+          <div *ngIf="loginError" 
+          class="text-danger">Las credenciales ingresadas no existen en nuestros registros.
+          </div>
+
         </div>
         </form>
       </div>
@@ -189,6 +195,7 @@
           type="submit"
           class="btn btn-success"
           data-bs-dismiss="modal"
+          (click)="onSubmit($event)"
         >
           Login
         </button>

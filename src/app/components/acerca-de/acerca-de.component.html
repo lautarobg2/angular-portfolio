@@ -14,7 +14,7 @@
   data-bs-toggle="modal"
   data-bs-target="#acercaDeEditModal"
     id="edit"
-    *ngIf="AuthService.usuarioLogueado"
+    *ngIf="usuarioLogueado"
     class="betene btn1 hover"
   >
     <i class="fas fa-pencil-alt"></i>
@@ -57,8 +57,8 @@
         <div class="input-group">
           <input
             type="text"
-            name="title"
-            id="title"
+            name="aboutdescription"
+            id="aboutdescription"
             [(ngModel)]="acercadeInfo.description"            
             class="form-control"
             aria-describedby="basic-addon1"

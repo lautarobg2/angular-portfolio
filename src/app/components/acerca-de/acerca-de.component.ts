@@ -25,8 +25,7 @@ export class AcercaDeComponent implements OnInit {
 
       this.AllDataService.getDatosAcercaDe().subscribe(
         (data) => {
-          this.acercadeInfo = data;
-          console.log(data);
+          this.acercadeInfo = data[0];
         }
       );
     }

@@ -26,7 +26,7 @@ export class AllDataService {
   apiUrlEducacion: string = "http://localhost:8080/education";
   apiUrlExperiencia: string = "http://localhost:8080/experience";
   apiUrlSkills: string = "http://localhost:8080/skills";
-  apiUrlProyects: string = "http://localhost:3000/proyects";
+  apiUrlProyects: string = "http://localhost:8080/proyects";
 
 
   constructor( private http: HttpClient) { }

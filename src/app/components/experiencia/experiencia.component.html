@@ -1,7 +1,7 @@
 <!-- EXPERIENCIA -->
 
 <div class="card border-dark mb-3 seccion-info" style="max-width: 80rem">
-  <div id="exp-plus" *ngIf="AuthService.usuarioLogueado">
+  <div id="exp-plus" *ngIf="usuarioLogueado">
     <button
       class="betene btn1 hover"
       data-bs-toggle="modal"
@@ -19,7 +19,7 @@
         *ngFor="let item of experienciaInfo; let i = index"
       >
         <li>
-          <div id="exp-delete-edit" *ngIf="AuthService.usuarioLogueado">
+          <div id="exp-delete-edit" *ngIf="usuarioLogueado">
             <button class="betene btn1 hover">
               <fa-icon
                 [icon]="faTimes"
@@ -87,8 +87,8 @@
             <div class="input-group">
               <input
                 type="text"
-                name="title"
-                id="title"
+                name="expempresa"
+                id="expempresa"
                 [(ngModel)]="newExp.title"
                 class="form-control"
                 aria-describedby="basic-addon1"
@@ -100,8 +100,8 @@
             <div class="input-group">
               <input
                 type="text"
-                name="description"
-                id="description"
+                name="exppuesto"
+                id="exppuesto"
                 [(ngModel)]="newExp.description"
                 class="form-control"
                 aria-describedby="basic-addon1"
@@ -112,8 +112,8 @@
             <div class="input-group">
               <input
                 type="text"
-                name="time"
-                id="time"
+                name="exptime"
+                id="exptime"
                 [(ngModel)]="newExp.time"
                 class="form-control"
                 aria-describedby="basic-addon1"
@@ -172,8 +172,8 @@
             <div class="input-group">
               <input
                 type="text"
-                name="title"
-                id="title"
+                name="expeditempresa"
+                id="expeditempresa"
                 *ngIf="expSelected"
                 [(ngModel)]="expSelected.title"
                 class="form-control"
@@ -186,8 +186,8 @@
             <div class="input-group">
               <input
                 type="text"
-                name="description"
-                id="description"
+                name="expeditpuesto"
+                id="expeditpuesto"
                 *ngIf="expSelected"
                 [(ngModel)]="expSelected.description"
                 class="form-control"
@@ -199,8 +199,8 @@
             <div class="input-group">
               <input
                 type="text"
-                name="time"
-                id="time"
+                name="expedittime"
+                id="expedittime"
                 *ngIf="expSelected"
                 [(ngModel)]="expSelected.time"
                 class="form-control"

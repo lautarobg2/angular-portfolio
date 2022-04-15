@@ -1,6 +1,6 @@
 <div class="card border-dark mb-3 seccion-info" style="max-width: 80rem">
     
-  <div id="edu-plus" *ngIf="AuthService.usuarioLogueado">
+  <div id="edu-plus" *ngIf="usuarioLogueado">
       <button
         class="betene btn1 hover"
         data-bs-toggle="modal"
@@ -16,7 +16,7 @@
 
         <ul id="education-list" *ngFor="let item of educacionInfo; let i = index">
           <li>
-            <div id="edu-delete-edit" *ngIf="AuthService.usuarioLogueado">
+            <div id="edu-delete-edit" *ngIf="usuarioLogueado">
               <button class="betene btn1 hover">
                 <fa-icon
                   [icon]="faTimes"
@@ -83,8 +83,8 @@
         <div class="input-group">
           <input
             type="text"
-            name="title"
-            id="title"
+            name="insti"
+            id="insti"
             [(ngModel)]="newEdu.title"
             class="form-control"
             aria-describedby="basic-addon1"
@@ -96,8 +96,8 @@
         <div class="input-group">
           <input
             type="text"
-            name="description"
-            id="description"
+            name="edudescription"
+            id="edudescription"
             [(ngModel)]="newEdu.description"
             class="form-control"
             aria-describedby="basic-addon1"
@@ -108,8 +108,8 @@
         <div class="input-group">
           <input
             type="text"
-            name="time"
-            id="time"
+            name="edutime"
+            id="edutime"
             [(ngModel)]="newEdu.time"
             class="form-control"
             aria-describedby="basic-addon1"
@@ -165,8 +165,8 @@
         <div class="input-group">
           <input
             type="text"
-            name="title"
-            id="title"
+            name="edueditinsti"
+            id="edueditinsti"
             *ngIf="eduSelected" 
             [(ngModel)]="eduSelected.title"            
             class="form-control"
@@ -179,8 +179,8 @@
         <div class="input-group">
           <input
             type="text"
-            name="description"
-            id="description"
+            name="edueditdescription"
+            id="edueditdescription"
             *ngIf="eduSelected" 
             [(ngModel)]="eduSelected.description"            
             class="form-control"
@@ -192,8 +192,8 @@
         <div class="input-group">
           <input
             type="text"
-            name="time"
-            id="time"
+            name="eduedittime"
+            id="eduedittime"
             *ngIf="eduSelected" 
             [(ngModel)]="eduSelected.time"            
             class="form-control"
