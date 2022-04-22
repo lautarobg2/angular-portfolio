@@ -19,7 +19,7 @@ export class SkillsComponent implements OnInit {
 
   skillsInfo: skills[] = [];
 
-  skSelected?: skills[];
+  skSelected?: skills;
 
   usuarioLogueado: Boolean = false;
 
@@ -41,6 +41,7 @@ export class SkillsComponent implements OnInit {
     this.AllDataService.addSkill(skills).subscribe((skills) => (
       this.skillsInfo.push(skills)
     ));
+    window.location.reload();
   }
 
 
@@ -52,12 +53,15 @@ export class SkillsComponent implements OnInit {
         return t.id !== skills.id
       })
     })
+    window.location.reload();
   }
 
-
+  onSelectEdit(index: number){
+    this.skSelected = this.skillsInfo[index];
+  }
 
   onUpdate(){
-    
+    this.AllDataService.saveEditSkills(this.skSelected);
   }
 
 

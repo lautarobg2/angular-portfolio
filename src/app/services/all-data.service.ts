@@ -26,7 +26,7 @@ export class AllDataService {
   apiUrlEducacion: string = "http://localhost:8080/education";
   apiUrlExperiencia: string = "http://localhost:8080/experience";
   apiUrlSkills: string = "http://localhost:8080/skills";
-  apiUrlProyects: string = "http://localhost:8080/proyects";
+  apiUrlProyects: string = "http://localhost:8080/proyect";
 
 
   constructor( private http: HttpClient) { }
@@ -108,14 +108,34 @@ export class AllDataService {
   }                       
                          
   onDeleteSkill(skills:skills):Observable<skills>{
-    const url = `${this.apiUrlSkills}/${skills.id}`
+    const url = `${this.apiUrlSkills + "/delete"}/${skills.id}`
     return this.http.delete<skills>(url)
   }
 
 
-  saveEditSkills(skills:skills):Observable<skills>{
-    return this.http.put<skills>(this.apiUrlSkills + "/update", skills, httpOptions)
+  saveEditSkills(skSelected?:skills):Observable<skills>{
+    const url = `${this.apiUrlSkills}/${skSelected?.id}`
+    return this.http.put<skills>(url + "/update", skSelected, httpOptions)
   }
+
+
+                       // PROYECTS
+
+  addProyect(proyect:proyects):Observable<proyects>{
+    return this.http.post<proyects>(this.apiUrlProyects + "/create", proyect, httpOptions)
+  }                       
+                         
+  onDeleteProyect(proyect:proyects):Observable<proyects>{
+    const url = `${this.apiUrlProyects + "/delete"}/${proyect.id}`
+    return this.http.delete<proyects>(url)
+  }
+
+
+  saveEditProyect(proSelected?:proyects):Observable<proyects>{
+    const url = `${this.apiUrlProyects}/${proSelected?.id}`
+    return this.http.put<proyects>(url + "/update", proSelected, httpOptions)
+  }
+                     
 
 
 

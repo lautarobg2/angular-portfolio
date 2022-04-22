@@ -7,7 +7,7 @@
 <h4 id="scrollspyHeadingPro" class="title">Mis Proyectos:</h4>
 
 <div class="row">
-  <div class="col-sm-4" *ngFor="let proyect of proyectsInfo">
+  <div class="col-sm-4" *ngFor="let proyect of proyectsInfo; let i=index">
     <div class="card">
       <img [src]="proyect.img" class="card-img-top" alt="..." style=" width: 20em">
       <div class="card-body">

@@ -1,5 +1,5 @@
 export interface proyects{
-    id: number;
+    id?: number;
     img: string;
     title: string;
     description: string;

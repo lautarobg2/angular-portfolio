@@ -12,6 +12,9 @@ export class ProyectsComponent implements OnInit {
 
   proyectsInfo: proyects[] = []
 
+  proSelected?: proyects;
+
+
   usuarioLogueado: Boolean = false;
 
   constructor(private AllDataService: AllDataService, public AuthService: AuthService) { }
@@ -28,5 +31,26 @@ export class ProyectsComponent implements OnInit {
     );
 
   }
+
+  onDeleteProyect(proyects:proyects){
+    this.AllDataService.onDeleteProyect(proyects)
+    .subscribe( 
+      ()=>{
+      this.proyectsInfo = this.proyectsInfo.filter( (t) => {
+        return t.id !== proyects.id
+      })
+    })
+    window.location.reload();
+  }
+
+  onSelectEdit(index: number){
+    this.proSelected = this.proyectsInfo[index];
+  }
+
+  onUpdate(){
+    this.AllDataService.saveEditProyect(this.proSelected);
+  }
+
+
 
 }
