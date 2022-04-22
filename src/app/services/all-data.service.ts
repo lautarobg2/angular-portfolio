@@ -60,7 +60,7 @@ export class AllDataService {
                       // ACERCA DE 
   
     saveEditAcercaDe(acercade:acercade):Observable<acercade>{
-    return this.http.patch<acercade>(this.apiUrlAcercaDe, acercade, httpOptions)
+    return this.http.put<acercade>(this.apiUrlAcercaDe, acercade, httpOptions)
     }
 
 
@@ -68,16 +68,17 @@ export class AllDataService {
                       // EDUCACION
 
   onDeleteEducacion(educacion:educacion):Observable<educacion>{
-    const url = `${this.apiUrlEducacion}/${educacion.id}`
+    const url = `${this.apiUrlEducacion + "/delete"}/${educacion.id}`
     return this.http.delete<educacion>(url)
   }
 
   addEducacion(educacion:educacion):Observable<educacion>{
-    return this.http.post<educacion>(this.apiUrlEducacion, educacion, httpOptions)
+    return this.http.post<educacion>(this.apiUrlEducacion + "/create", educacion, httpOptions)
   }
 
   saveEditEducacion(eduSelected?:educacion):Observable<educacion>{
-    return this.http.patch<educacion>(this.apiUrlEducacion, eduSelected, httpOptions)
+    const url = `${this.apiUrlEducacion}/${eduSelected?.id}`
+    return this.http.put<educacion>(url + "/update", eduSelected, httpOptions)
   }
 
 
@@ -86,28 +87,34 @@ export class AllDataService {
                        // EXPERIENCIA  
                        
   onDeleteExperiencia(experiencia:experiencia):Observable<experiencia>{
-    const url = `${this.apiUrlExperiencia}/${experiencia.id}`
+    const url = `${this.apiUrlExperiencia + "/delete"}/${experiencia.id}`
     return this.http.delete<experiencia>(url)
   }
 
   addExperiencia(experiencia:experiencia):Observable<experiencia>{
-    return this.http.post<experiencia>(this.apiUrlExperiencia, experiencia, httpOptions)
+    return this.http.post<experiencia>(this.apiUrlExperiencia + "/create", experiencia, httpOptions)
   }
 
   saveEditExperiencia(expSelected?:experiencia):Observable<experiencia>{
-    return this.http.patch<experiencia>(this.apiUrlExperiencia, expSelected, httpOptions)
+    const url = `${this.apiUrlExperiencia}/${expSelected?.id}`
+    return this.http.put<experiencia>(url + "/update", expSelected, httpOptions)
   }
 
 
                          // SKILLS
 
   addSkill(skills:skills):Observable<skills>{
-    return this.http.post<skills>(this.apiUrlSkills, skills, httpOptions)
+    return this.http.post<skills>(this.apiUrlSkills + "/create", skills, httpOptions)
   }                       
                          
   onDeleteSkill(skills:skills):Observable<skills>{
     const url = `${this.apiUrlSkills}/${skills.id}`
     return this.http.delete<skills>(url)
+  }
+
+
+  saveEditSkills(skills:skills):Observable<skills>{
+    return this.http.put<skills>(this.apiUrlSkills + "/update", skills, httpOptions)
   }
 
 

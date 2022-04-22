@@ -49,6 +49,7 @@ export class ExperienciaComponent implements OnInit {
     this.AllDataService.addExperiencia(experiencia).subscribe((experiencia) => (
       this.experienciaInfo.push(experiencia)
     ));
+    window.location.reload();
   }
 
   
@@ -60,6 +61,7 @@ export class ExperienciaComponent implements OnInit {
         return t.id !== experiencia.id
       })
     })
+    window.location.reload();
   }
 
   onSelectEdit(index: number){
@@ -68,6 +70,7 @@ export class ExperienciaComponent implements OnInit {
 
   onUpdate(){
     this.AllDataService.saveEditExperiencia(this.expSelected);
+    console.log(this.expSelected);
   }
 
 

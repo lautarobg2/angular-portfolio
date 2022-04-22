@@ -92,6 +92,18 @@
     
 }
 
+.container-item{
+    display: flex;
+    align-items: center;
+}
+
+.mini-icon{
+    max-width: 75px;
+    max-height: 75px;
+    margin-right: 20px;
+    
+}
+
               /*BOTONES EDITAR AGREGAR ELIMINAR Y REDES SOCIALES*/
 
 .betene {

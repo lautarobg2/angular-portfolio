@@ -52,6 +52,7 @@ export class EducacionComponent implements OnInit {
     this.AllDataService.addEducacion(educacion).subscribe((educacion) => (
       this.educacionInfo.push(educacion)
     ));
+    window.location.reload();
   }
 
   onDeleteEducacion(educacion:educacion){
@@ -62,6 +63,7 @@ export class EducacionComponent implements OnInit {
         return t.id !== educacion.id
       })
     })
+    window.location.reload();
   }
 
   onSelectEdit(index: number){
@@ -70,7 +72,6 @@ export class EducacionComponent implements OnInit {
 
   onUpdate(){
     this.AllDataService.saveEditEducacion(this.eduSelected);
-    console.log(this.eduSelected);
   }
 
 

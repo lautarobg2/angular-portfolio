@@ -19,6 +19,8 @@ export class SkillsComponent implements OnInit {
 
   skillsInfo: skills[] = [];
 
+  skSelected?: skills[];
+
   usuarioLogueado: Boolean = false;
 
   constructor(private AllDataService: AllDataService, public AuthService: AuthService) { }
@@ -50,6 +52,12 @@ export class SkillsComponent implements OnInit {
         return t.id !== skills.id
       })
     })
+  }
+
+
+
+  onUpdate(){
+    
   }
 
 
