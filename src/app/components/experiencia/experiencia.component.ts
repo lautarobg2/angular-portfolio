@@ -36,7 +36,11 @@ export class ExperienciaComponent implements OnInit {
 
     this.usuarioLogueado = this.AuthService.usuarioLogueado();
 
+    this.reloadData();
 
+  }
+
+  reloadData(){
     this.AllDataService.getDatosExperiencia().subscribe(
       (data) => {
         this.experienciaInfo = data;
@@ -46,22 +50,24 @@ export class ExperienciaComponent implements OnInit {
   }
 
   addExperiencia(experiencia:experiencia){
-    this.AllDataService.addExperiencia(experiencia).subscribe((experiencia) => (
+    this.AllDataService.addExperiencia(experiencia).subscribe(
+      (experiencia) => (
       this.experienciaInfo.push(experiencia)
     ));
-    window.location.reload();
+    this.reloadData();
+    this.ngOnInit();
   }
 
   
   onDeleteExperiencia(experiencia:experiencia){
     this.AllDataService.onDeleteExperiencia(experiencia)
     .subscribe( 
-      ()=>{
+      (experiencia)=>{
       this.experienciaInfo = this.experienciaInfo.filter( (t) => {
         return t.id !== experiencia.id
       })
     })
-    window.location.reload();
+    this.reloadData();
   }
 
   onSelectEdit(index: number){
@@ -69,8 +75,11 @@ export class ExperienciaComponent implements OnInit {
   }
 
   onUpdate(){
-    this.AllDataService.saveEditExperiencia(this.expSelected);
-    console.log(this.expSelected);
+    this.AllDataService.saveEditExperiencia(this.expSelected).subscribe(
+      (response) => {
+        this.reloadData();
+      }
+    );
   }
 
 

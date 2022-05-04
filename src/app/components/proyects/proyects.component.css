@@ -11,3 +11,23 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+
+#proy-plus{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 25px;
+    top: 10px;
+}
+
+#proy-delete-edit{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    top: 5px;
+    right: 5px;
+}
+#proy-delete-edit button{
+    margin-right: 8px;
+}
+

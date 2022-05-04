@@ -9,21 +9,29 @@
   style="max-width: 80rem"
 >
 
-<div id="about-edit">
-<button
-  data-bs-toggle="modal"
-  data-bs-target="#acercaDeEditModal"
-    id="edit"
-    *ngIf="usuarioLogueado"
-    class="betene btn1 hover"
-  >
-    <i class="fas fa-pencil-alt"></i>
-  </button>
-</div>
   
   <div class="card-body text-dark title-box-text">
     <h4 id="scrollspyHeadingAcercaDe" class="card-title-title">Acerca de:</h4>
-    <p class="card-text">{{ acercadeInfo.description }}</p>
+
+    <div *ngFor=" let item of acercadeInfo; let i = index"> 
+
+      <div id="about-edit">
+        <button
+          data-bs-toggle="modal"
+          data-bs-target="#aboutEditModal"
+            id="edit"
+            *ngIf="usuarioLogueado"
+            (click)="onSelectEdit(i)"
+            class="betene btn1 hover"
+          >
+            <i class="fas fa-pencil-alt"></i>
+          </button>
+        </div>
+
+
+      <p class="card-text">{{ item.description }}</p>
+        
+    </div>
 
 
 
@@ -31,16 +39,16 @@
 <!-- Modal -->
 <div
   class="modal fade"
-  id="acercaDeEditModal"
+  id="aboutEditModal"
   tabindex="-1"
   aria-labelledby="exampleModalLabel"
   aria-hidden="true"
 >
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h3 class="modal-title" id="exampleModalLabel">
-          Edite su descripción:
+          Edite su descripción personal:
         </h3>
         <button
           type="button"
@@ -57,20 +65,20 @@
         <div class="input-group">
           <input
             type="text"
-            name="aboutdescription"
-            id="aboutdescription"
-            [(ngModel)]="acercadeInfo.description"            
+            name="abouteditinsti"
+            id="abouteditinsti"
             class="form-control"
             aria-describedby="basic-addon1"
+            *ngIf="aboutSelected"
+            [(ngModel)]="aboutSelected.description"
           />
         </div>
         <br />
-        </div>
       </div>
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Close
+          Cerrar
         </button>
         <button
         (click)="onUpdate()"
@@ -78,9 +86,10 @@
           class="btn btn-success"
           data-bs-dismiss="modal"
         >
-          Save
+          Actualizar
         </button>
       </div>
     </div>
   </div>
+</div>
 

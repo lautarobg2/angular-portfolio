@@ -1,6 +1,7 @@
 <!-- EXPERIENCIA -->
 
 <div class="card border-dark mb-3 seccion-info" style="max-width: 80rem">
+  
   <div id="exp-plus" *ngIf="usuarioLogueado">
     <button
       class="betene btn1 hover"
@@ -83,8 +84,10 @@
             <!-- Cuerpo dentro del modal -->
 
             <h5 class="modal-title" id="exampleModalLabel1">Empresa:</h5>
+            <br />
             <div class="input-group">
               <input
+                placeholder="¿En qué empresa trabajó?"
                 type="text"
                 name="expempresa"
                 id="expempresa"
@@ -98,6 +101,7 @@
             <br />
             <div class="input-group">
               <input
+                placeholder="¿Qué hacía/hace en su puesto de trabajo?"
                 type="text"
                 name="exppuesto"
                 id="exppuesto"
@@ -108,8 +112,10 @@
             </div>
             <br />
             <h5 class="modal-title" id="exampleModalLabel1">Inicio - Final:</h5>
+            <br />
             <div class="input-group">
               <input
+                placeholder="Ingrese el año de inicio y final del trabajo"
                 type="text"
                 name="exptime"
                 id="exptime"
@@ -126,7 +132,7 @@
               class="btn btn-secondary"
               data-bs-dismiss="modal"
             >
-              Close
+              Cerrar
             </button>
             <button
               type="button"
@@ -134,7 +140,7 @@
               class="btn btn-success"
               data-bs-dismiss="modal"
             >
-              Add
+              Agregar
             </button>
           </div>
         </div>
@@ -168,6 +174,7 @@
             <!-- Cuerpo dentro del modal -->
 
             <h5 class="modal-title" id="exampleModalLabel1">Empresa:</h5>
+            <br />
             <div class="input-group">
               <input
                 type="text"
@@ -195,6 +202,7 @@
             </div>
             <br />
             <h5 class="modal-title" id="exampleModalLabel1">Inicio - Final:</h5>
+            <br />
             <div class="input-group">
               <input
                 type="text"
@@ -214,7 +222,7 @@
               class="btn btn-secondary"
               data-bs-dismiss="modal"
             >
-              Close
+              Cerrar
             </button>
             <button
               type="button"
@@ -222,7 +230,7 @@
               class="btn btn-success"
               data-bs-dismiss="modal"
             >
-              Save
+              Actualizar
             </button>
           </div>
         </div>

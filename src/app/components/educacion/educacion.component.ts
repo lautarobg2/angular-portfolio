@@ -39,31 +39,38 @@ export class EducacionComponent implements OnInit {
 
     this.usuarioLogueado = this.AuthService.usuarioLogueado();
 
+    this.reloadData();
+  
+  }
+
+  reloadData(){
 
     this.AllDataService.getDatosEducacion().subscribe(
       (data) => {
         this.educacionInfo = data;
       }
     );
-  
+
   }
 
   addEducacion(educacion:educacion){
-    this.AllDataService.addEducacion(educacion).subscribe((educacion) => (
+    this.AllDataService.addEducacion(educacion).subscribe(
+      (educacion) => (
       this.educacionInfo.push(educacion)
     ));
-    window.location.reload();
+    this.reloadData();
+    this.ngOnInit();
   }
 
   onDeleteEducacion(educacion:educacion){
     this.AllDataService.onDeleteEducacion(educacion)
     .subscribe( 
-      ()=>{
+      (educacion)=>{
       this.educacionInfo = this.educacionInfo.filter( (t) => {
         return t.id !== educacion.id
       })
-    })
-    window.location.reload();
+    });
+    this.reloadData();
   }
 
   onSelectEdit(index: number){
@@ -71,7 +78,11 @@ export class EducacionComponent implements OnInit {
   }
 
   onUpdate(){
-    this.AllDataService.saveEditEducacion(this.eduSelected);
+    this.AllDataService.saveEditEducacion(this.eduSelected).subscribe(
+      (response) =>{
+        this.reloadData();
+      }
+    );
   }
 
 

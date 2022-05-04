@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AllDataService } from 'src/app/services/all-data.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { proyects } from 'src/app/data/proyects-interface';
+import { newPROY } from 'src/app/mocks/mockProy';
+import { faTimes} from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-proyects',
@@ -14,6 +17,10 @@ export class ProyectsComponent implements OnInit {
 
   proSelected?: proyects;
 
+  newPROY: proyects = newPROY;
+
+  faTimes = faTimes;
+
 
   usuarioLogueado: Boolean = false;
 
@@ -23,24 +30,38 @@ export class ProyectsComponent implements OnInit {
 
     this.usuarioLogueado = this.AuthService.usuarioLogueado();
 
+    this.reloadData();
+  }
 
+  reloadData() {
     this.AllDataService.getDatosProyects().subscribe(
       (data) => {
         this.proyectsInfo = data;
       }
     );
-
   }
 
-  onDeleteProyect(proyects:proyects){
-    this.AllDataService.onDeleteProyect(proyects)
+  addProyect(proyect:proyects){
+    this.AllDataService.addProyect(proyect).subscribe(
+      (proyect) => (
+      this.proyectsInfo.push(proyect)
+    ));
+    this.reloadData();
+    this.ngOnInit();
+    window.location.reload();
+  }
+
+
+  onDeleteProyect(proyect:proyects){
+    this.AllDataService.onDeleteProyect(proyect)
     .subscribe( 
-      ()=>{
+      (proyect)=>{
       this.proyectsInfo = this.proyectsInfo.filter( (t) => {
-        return t.id !== proyects.id
+        return t.id !== proyect.id
       })
     })
-    window.location.reload();
+    this.reloadData();
+    this.ngOnInit();
   }
 
   onSelectEdit(index: number){
@@ -48,7 +69,11 @@ export class ProyectsComponent implements OnInit {
   }
 
   onUpdate(){
-    this.AllDataService.saveEditProyect(this.proSelected);
+    this.AllDataService.saveEditProyect(this.proSelected).subscribe(
+      (response) => {
+        this.reloadData();
+      }
+    );
   }
 
 

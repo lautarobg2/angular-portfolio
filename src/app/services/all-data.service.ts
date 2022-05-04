@@ -59,8 +59,8 @@ export class AllDataService {
 
                       // ACERCA DE 
   
-    saveEditAcercaDe(acercade:acercade):Observable<acercade>{
-    return this.http.put<acercade>(this.apiUrlAcercaDe, acercade, httpOptions)
+    saveEditAcercaDe(aboutSelected?:acercade):Observable<acercade>{
+    return this.http.put<any>(this.apiUrlAcercaDe + "/update", aboutSelected, httpOptions)
     }
 
 
@@ -77,8 +77,7 @@ export class AllDataService {
   }
 
   saveEditEducacion(eduSelected?:educacion):Observable<educacion>{
-    const url = `${this.apiUrlEducacion}/${eduSelected?.id}`
-    return this.http.put<educacion>(url + "/update", eduSelected, httpOptions)
+    return this.http.put<educacion>(this.apiUrlEducacion + "/update", eduSelected, httpOptions)
   }
 
 
@@ -96,8 +95,7 @@ export class AllDataService {
   }
 
   saveEditExperiencia(expSelected?:experiencia):Observable<experiencia>{
-    const url = `${this.apiUrlExperiencia}/${expSelected?.id}`
-    return this.http.put<experiencia>(url + "/update", expSelected, httpOptions)
+    return this.http.put<experiencia>(this.apiUrlExperiencia + "/update", expSelected, httpOptions)
   }
 
 
@@ -114,8 +112,7 @@ export class AllDataService {
 
 
   saveEditSkills(skSelected?:skills):Observable<skills>{
-    const url = `${this.apiUrlSkills}/${skSelected?.id}`
-    return this.http.put<skills>(url + "/update", skSelected, httpOptions)
+    return this.http.put<skills>(this.apiUrlSkills + "/update", skSelected, httpOptions)
   }
 
 
@@ -132,8 +129,7 @@ export class AllDataService {
 
 
   saveEditProyect(proSelected?:proyects):Observable<proyects>{
-    const url = `${this.apiUrlProyects}/${proSelected?.id}`
-    return this.http.put<proyects>(url + "/update", proSelected, httpOptions)
+    return this.http.put<proyects>(this.apiUrlProyects + "/update", proSelected, httpOptions)
   }
                      
 

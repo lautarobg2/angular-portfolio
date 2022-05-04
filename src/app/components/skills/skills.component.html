@@ -1,51 +1,66 @@
 <div
-  class="card border-dark mb-3 contiene-progres seccion-info"
+  class="card border-dark mb-3 contiene-progres seccion-info title-box-text"
   style="max-width: 80rem"
 >
-  <h4 id="scrollspyHeadingSkills" class="title title-box-text">Hard & Soft Skills:</h4>
 
-  <div id="sk-edit" *ngIf="usuarioLogueado">
-    <button
-      class="betene btn1 hover"
-      data-bs-toggle="modal"
-      data-bs-target="#skillEditModal"
-
-    >
-      <i class="fas fa-pencil-alt"></i>
-    </button>
-  </div>
-
-  <div id="sk-plus" *ngIf="usuarioLogueado">
-    <button 
+<div id="sk-plus" *ngIf="usuarioLogueado">
+  <button
     class="betene btn1 hover"
     data-bs-toggle="modal"
     data-bs-target="#skillsModal"
-    >
+  >
     <i class="fas fa-plus"></i>
   </button>
-  </div>
+</div>
 
-  <div id="skill-item-card" class="contiene-progress col-10">
-    <circle-progress
-      *ngFor="let skill of skillsInfo; let i = index"
-      [radius]="65"
-      [outerStrokeWidth]="10"
-      [innerStrokeWidth]="10"
-      [innerStrokeColor]="'##e7e8ea'"
-      [animation]="true"
-      [showTitle]="true"
-      [responsive]="false"
-      [animationDuration]="1000"
-      [subtitleFontSize]="'20'"
-      [percent]="skill.porcentaje"
-      [title]="skill.title"
-      [subtitle]="skill.subtitle"
-      [outerStrokeColor]="skill.outerStrokeColor"
-      [imageHeight]="60"
-      [imageWidth]="60"
-    ></circle-progress>
-  </div>
+<div class="card-body text-dark title-box-text">
+  <h4 id="scrollspyHeadingSkills" class="card-title-title">
+    Hard & Soft Skills:
+  </h4>
 
+  <div  id="skill-item-card" class="container contiene-progres">
+    <div class="row g-2">
+
+      <div *ngFor="let skill of skillsInfo; let i = index" class="col-6 col-sm-2">
+        <div id="sk-delete-edit" *ngIf="usuarioLogueado">
+          <button class="betene btn1 hover">
+            <fa-icon
+              [icon]="faTimes"
+              [ngStyle]="{ color: 'red' }"
+              (click)="onDeleteSkill(skill)"
+            ></fa-icon>
+          </button>
+          <button class="betene btn1 hover"
+          data-bs-toggle="modal"
+          data-bs-target="#skillEditModal"
+          (click)="onSelectEdit(i)"
+          >       
+            <i class="fas fa-pencil-alt"></i>
+          </button>
+        </div>
+
+        <circle-progress
+        [radius]="65"
+        [outerStrokeWidth]="10"
+        [innerStrokeWidth]="10"
+        [innerStrokeColor]="'##e7e8ea'"
+        [animation]="true"
+        [showTitle]="true"
+        [responsive]="false"
+        [animationDuration]="1000"
+        [subtitleFontSize]="'20'"
+        [percent]="skill.porcentaje"
+        [title]="skill.title"
+        [subtitle]="skill.subtitle"
+        [outerStrokeColor]="skill.outerStrokeColor"
+        [imageHeight]="60"
+        [imageWidth]="60"
+      ></circle-progress>
+
+      </div>
+
+    </div>
+  </div>
 
 <!-- MODAL DEL EDIT -->
 <!-- Modal -->
@@ -53,14 +68,14 @@
   class="modal fade"
   id="skillEditModal"
   tabindex="-1"
-  aria-labelledby="exampleModalLabel2"
+  aria-labelledby="exampleModalLabel"
   aria-hidden="true"
 >
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title title-box-text" id="exampleModalLabel2">
-          Edite sus Hard & Soft Skills:
+        <h3 class="modal-title" id="exampleModalLabel">
+          Edite su Hard o Soft Skill:
         </h3>
         <button
           type="button"
@@ -73,62 +88,61 @@
       <div class="modal-body">
         <!-- Cuerpo dentro del modal -->
 
-        <div
-          class="input-group"
-        >
-        <div class="container-items" *ngFor="let skill of skillsInfo; let i = index"
-        >
-          <h5 class="modal-title title-box-text" id="exampleModalLabel1">{{skill.subtitle}}</h5>
-          <h6 class="modal-title title-box-text" id="exampleModalLabel1">Habilidad:</h6>
-          <div class="input-group">
-            <input
-              type="text"
-              name="title"
-              id="title"
-              [(ngModel)]="skill.subtitle"
-              class="form-control"
-              aria-describedby="basic-addon1"
-            />
-          </div>
-          <h6 class="modal-title title-box-text" id="exampleModalLabel1">Porcentaje de Habilidad:</h6>
-          <div class="input-group">
-            <input
-              type="text"
-              name="description"
-              id="description"
-              [(ngModel)]="skill.porcentaje"
-              class="form-control"
-              aria-describedby="basic-addon1"
-            />
-          </div>
-          <h6 class="modal-title title-box-text" id="exampleModalLabel1">Color/Código de Color:</h6>
-          <div class="input-group">
-            <input
-              type="text"
-              name="time"
-              id="time"
-              [(ngModel)]="skill.outerStrokeColor"
-              class="form-control"
-              aria-describedby="basic-addon1"
-            />
-          </div>
-          <br />
-          <button
-          (click)="onDeleteSkill(skill)"
-          type="button"
-          class="btn btn-danger title-box-text"
-        >
-          Eliminar Skill
-        </button>
+        <h5 class="modal-title" id="exampleModalLabel">Título:</h5>
+        <br />
+        <div class="input-group">
+          <input
+            type="text"
+            name="edueditinsti"
+            id="edueditinsti"
+            *ngIf="skSelected" 
+            [(ngModel)]="skSelected.subtitle"            
+            class="form-control"
+            aria-describedby="basic-addon1"
+          />
         </div>
+        <br />
+        <h5 class="modal-title" id="exampleModalLabel">Porcentaje de conocimiento:</h5>
+        <br />
+        <div class="input-group">
+          <input
+            type="text"
+            name="edueditdescription"
+            id="edueditdescription"
+            *ngIf="skSelected" 
+            [(ngModel)]="skSelected.porcentaje"
+            [(ngModel)]="skSelected.title"
+            class="form-control"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <br />
+        <h5 class="modal-title" id="exampleModalLabel">Código de color:</h5>
+        <br />
+        <div class="input-group">
+          <input
+            type="text"
+            name="eduedittime"
+            id="eduedittime"
+            *ngIf="skSelected" 
+            [(ngModel)]="skSelected.outerStrokeColor"            
+            class="form-control"
+            aria-describedby="basic-addon1"
+          />
         </div>
       </div>
 
-      <div class="modal-footer title-box-text">
-        <button  (click)="onUpdate()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Close
         </button>
-        <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+        <button
+        *ngIf="skSelected" 
+        (click)="onUpdate()"
+          type="button"
+          class="btn btn-success"
+          data-bs-dismiss="modal"
+        >
           Save
         </button>
       </div>
@@ -136,86 +150,99 @@
   </div>
 </div>
 
-
-<!-- MODAL -->
-<!-- Modal -->
-<div
-  class="modal fade"
-  id="skillsModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel1"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title title-box-text" id="exampleModalLabel1">
-          Agregue su nueva Hard/Soft Skill:
-        </h3>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-
-      <div class="modal-body">
-        <!-- Cuerpo dentro del modal -->
-
-        <h5 class="modal-title title-box-text" id="exampleModalLabel1">Skill:</h5>
-        <div class="input-group">
-          <input
-            type="text"
-            name="title"
-            id="title"
-            [(ngModel)]="newSK.subtitle"
-            class="form-control"
-            aria-describedby="basic-addon1"
-          />
+  <!-- MODAL -->
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="skillsModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel1"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title title-box-text" id="exampleModalLabel1">
+            Agregue su nueva Hard/Soft Skill:
+          </h3>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
-        <br />
-        <h5 class="modal-title title-box-text" id="exampleModalLabel1">Porcentaje de conocimiento:</h5>
-        <br />
-        <div class="input-group">
-          <input
-            type="text"
-            name="description"
-            id="description"
-            [(ngModel)]="newSK.porcentaje"
-            [(ngModel)]="newSK.title"
-            class="form-control"
-            aria-describedby="basic-addon1"
-          />
-        </div>
-        <br />
-        <h5 class="modal-title title-box-text" id="exampleModalLabel1">Color/Código de color:</h5>
-        <div class="input-group">
-          <input
-            type="text"
-            name="time"
-            id="time"
-            [(ngModel)]="newSK.outerStrokeColor"
-            class="form-control"
-            aria-describedby="basic-addon1"
-          />
-        </div>
-      </div>
 
-      <div class="modal-footer title-box-text">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Close
-        </button>
-        <button
-          type="button"
-          (click)="addSkill(newSK)"
-          class="btn btn-success"
-          data-bs-dismiss="modal"
-        >
-          Add
-        </button>
+        <div class="modal-body">
+          <!-- Cuerpo dentro del modal -->
+
+          <h5 class="modal-title title-box-text" id="exampleModalLabel1">
+            Skill:
+          </h5>
+          <br />
+          <div class="input-group">
+            <input
+              placeholder="Ingrese su habilidad dura o blanda"
+              type="text"
+              name="title"
+              id="title"
+              [(ngModel)]="newSK.subtitle"
+              class="form-control"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <br />
+          <h5 class="modal-title title-box-text" id="exampleModalLabel1">
+            Porcentaje de conocimiento:
+          </h5>
+          <br />
+          <div class="input-group">
+            <input
+              placeholder='Solo en valor numérico. Ejemplo: "80"'
+              type="text"
+              name="description"
+              id="description"
+              [(ngModel)]="newSK.porcentaje"
+              [(ngModel)]="newSK.title"
+              class="form-control"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <br />
+          <h5 class="modal-title title-box-text" id="exampleModalLabel1">
+            Color/Código de color:
+          </h5>
+          <br />
+          <div class="input-group">
+            <input
+             placeholder='Ejemplo: "red" o "#F265A9"'
+              type="text"
+              name="time"
+              id="time"
+              [(ngModel)]="newSK.outerStrokeColor"
+              class="form-control"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+        </div>
+
+        <div class="modal-footer title-box-text">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Cerrar
+          </button>
+          <button
+            type="button"
+            (click)="addSkill(newSK)"
+            class="btn btn-success"
+            data-bs-dismiss="modal"
+          >
+            Agregar
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-

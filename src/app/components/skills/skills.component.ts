@@ -5,6 +5,8 @@ import { skills } from 'src/app/data/skills-interface';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { AuthService } from 'src/app/services/auth.service';
 import { newSK } from 'src/app/mocks/mockSkill';
+import { faTimes} from '@fortawesome/free-solid-svg-icons';
+
 
 
 
@@ -23,37 +25,44 @@ export class SkillsComponent implements OnInit {
 
   usuarioLogueado: Boolean = false;
 
+  faTimes = faTimes;
+
   constructor(private AllDataService: AllDataService, public AuthService: AuthService) { }
 
   ngOnInit(): void {
 
     this.usuarioLogueado = this.AuthService.usuarioLogueado();
 
+    this.reloadData();
+  }
+
+  reloadData() {
     this.AllDataService.getDatosSkills().subscribe(
       (data) => {
         this.skillsInfo = data;
       }
     );
-
   }
 
   addSkill(skills:skills){
-    this.AllDataService.addSkill(skills).subscribe((skills) => (
+    this.AllDataService.addSkill(skills).subscribe(
+      (skills) => (
       this.skillsInfo.push(skills)
     ));
-    window.location.reload();
-  }
+this.reloadData();
+this.ngOnInit();
+}
 
 
   onDeleteSkill(skills:skills){
     this.AllDataService.onDeleteSkill(skills)
     .subscribe( 
-      ()=>{
+      (skills)=>{
       this.skillsInfo = this.skillsInfo.filter( (t) => {
         return t.id !== skills.id
       })
-    })
-    window.location.reload();
+    });
+    this.reloadData();
   }
 
   onSelectEdit(index: number){
@@ -61,7 +70,12 @@ export class SkillsComponent implements OnInit {
   }
 
   onUpdate(){
-    this.AllDataService.saveEditSkills(this.skSelected);
+    this.AllDataService.saveEditSkills(this.skSelected).subscribe(
+      (response) => {
+        this.reloadData();
+      }
+    );
+    console.log(this.skillsInfo);
   }
 
 

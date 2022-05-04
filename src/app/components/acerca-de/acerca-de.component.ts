@@ -11,7 +11,9 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class AcercaDeComponent implements OnInit {
 
-  acercadeInfo: any;
+  acercadeInfo: acercade[] = [];
+
+  aboutSelected?: acercade;
 
   usuarioLogueado: Boolean = false;
 
@@ -25,14 +27,24 @@ export class AcercaDeComponent implements OnInit {
 
       this.AllDataService.getDatosAcercaDe().subscribe(
         (data) => {
-          this.acercadeInfo = data[0];
+          this.acercadeInfo = data;
         }
       );
     }
 
+    onSelectEdit(index: number){
+      this.aboutSelected = this.acercadeInfo[index];
+    }
+  
+
   
     onUpdate(){
-      this.AllDataService.saveEditAcercaDe(this.acercadeInfo);
+      this.AllDataService.saveEditAcercaDe(this.aboutSelected).subscribe(
+        (response) => {
+          this.ngOnInit();
+        }
+      );
+      console.log(this.aboutSelected);
     }
   
 

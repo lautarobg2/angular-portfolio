@@ -38,11 +38,14 @@ export class NavbarComponent implements OnInit {
 
       this.AuthService.login(this.form.value).subscribe(
         (response: Boolean) => {
-          if (response)
+          if (response){
             window.location.reload();
-          else
+            window.alert("Sesión iniciada correctamente!");
+          }
+          else{
             window.alert("El email y/o contraseña son incorrectos!");
             this.loginError = true;
+          }
         }
       );
     }
