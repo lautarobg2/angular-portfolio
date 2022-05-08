@@ -21,12 +21,12 @@ const httpOptions = {
 })
 export class AllDataService {
 
-  apiUrlHeader: string = "http://localhost:8080/header";
-  apiUrlAcercaDe: string = "http://localhost:8080/about";
-  apiUrlEducacion: string = "http://localhost:8080/education";
-  apiUrlExperiencia: string = "http://localhost:8080/experience";
-  apiUrlSkills: string = "http://localhost:8080/skills";
-  apiUrlProyects: string = "http://localhost:8080/proyect";
+  apiUrlHeader: string = "https://spring-boot-portfolio.herokuapp.com/header";
+  apiUrlAcercaDe: string = "https://spring-boot-portfolio.herokuapp.com/about";
+  apiUrlEducacion: string = "https://spring-boot-portfolio.herokuapp.com/education";
+  apiUrlExperiencia: string = "https://spring-boot-portfolio.herokuapp.com/experience";
+  apiUrlSkills: string = "https://spring-boot-portfolio.herokuapp.com/skills";
+  apiUrlProyects: string = "https://spring-boot-portfolio.herokuapp.com/proyect";
 
 
   constructor( private http: HttpClient) { }
