@@ -21,37 +21,37 @@ const httpOptions = {
 })
 export class AllDataService {
 
-  apiUrlHeader: string = "https://spring-boot-portfolio.herokuapp.com/header";
-  apiUrlAcercaDe: string = "https://spring-boot-portfolio.herokuapp.com/about";
-  apiUrlEducacion: string = "https://spring-boot-portfolio.herokuapp.com/education";
-  apiUrlExperiencia: string = "https://spring-boot-portfolio.herokuapp.com/experience";
-  apiUrlSkills: string = "https://spring-boot-portfolio.herokuapp.com/skills";
-  apiUrlProyects: string = "https://spring-boot-portfolio.herokuapp.com/proyect";
+  apiUrlHeader: string = "http://spring-boot-portfolio.herokuapp.com/header";
+  apiUrlAcercaDe: string = "http://spring-boot-portfolio.herokuapp.com/about";
+  apiUrlEducacion: string = "http://spring-boot-portfolio.herokuapp.com/education";
+  apiUrlExperiencia: string = "http://spring-boot-portfolio.herokuapp.com/experience";
+  apiUrlSkills: string = "http://spring-boot-portfolio.herokuapp.com/skills";
+  apiUrlProyects: string = "http://spring-boot-portfolio.herokuapp.com/proyect";
 
 
   constructor( private http: HttpClient) { }
 
-  getDatosHeader():Observable<header[]>{
+  getDatosHeader():Observable<any>{
     return  this.http.get<any>(this.apiUrlHeader);
   }
 
-  getDatosAcercaDe():Observable<acercade[]>{
+  getDatosAcercaDe():Observable<any>{
     return  this.http.get<any>(this.apiUrlAcercaDe);
   }
 
-  getDatosEducacion():Observable<educacion[]>{
+  getDatosEducacion():Observable<any>{
     return  this.http.get<any>(this.apiUrlEducacion);
   }
 
-  getDatosExperiencia():Observable<experiencia[]>{
+  getDatosExperiencia():Observable<any>{
     return  this.http.get<any>(this.apiUrlExperiencia);
   }
 
-  getDatosSkills():Observable<skills[]>{
+  getDatosSkills():Observable<any>{
     return  this.http.get<any>(this.apiUrlSkills);
   }
 
-  getDatosProyects():Observable<proyects[]>{
+  getDatosProyects():Observable<any>{
     return  this.http.get<any>(this.apiUrlProyects);
   }
 
