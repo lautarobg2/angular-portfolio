@@ -14,8 +14,8 @@
       <h4 id="scrollspyHeadingEdu" class="card-title-title">Educación:</h4>
       <div>
 
-        <ul id="education-list" *ngFor="let item of educacionInfo; let i = index">
-          <li>
+        <ul id="education-list">
+          <li *ngFor="let item of educacionInfo; let i = index">
             <div id="edu-delete-edit" *ngIf="usuarioLogueado">
               <button class="betene btn1 hover">
                 <fa-icon
