@@ -22,13 +22,13 @@
     <div class="card">
 
       <div id="proy-delete-edit" *ngIf="usuarioLogueado">
-        <button class="betene btn1 hover">
+        <a class="betene btn1 hover">
           <fa-icon
             [icon]="faTimes"
             [ngStyle]="{ color: 'red' }"
             (click)="onDeleteProyect(proyect)"
           ></fa-icon>
-        </button>
+        </a>
         <button class="betene btn1 hover"
         data-bs-toggle="modal"
         data-bs-target="#editProyectModal"

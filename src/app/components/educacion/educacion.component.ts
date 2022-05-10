@@ -65,12 +65,11 @@ export class EducacionComponent implements OnInit {
   onDeleteEducacion(educacion:educacion){
     this.AllDataService.onDeleteEducacion(educacion)
     .subscribe( 
-      (educacion)=>{
+      ()=>{
       this.educacionInfo = this.educacionInfo.filter( (t) => {
         return t.id !== educacion.id
       })
     });
-    this.reloadData();
   }
 
   onSelectEdit(index: number){

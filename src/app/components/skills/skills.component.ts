@@ -57,12 +57,11 @@ this.ngOnInit();
   onDeleteSkill(skills:skills){
     this.AllDataService.onDeleteSkill(skills)
     .subscribe( 
-      (skills)=>{
+      ()=>{
       this.skillsInfo = this.skillsInfo.filter( (t) => {
         return t.id !== skills.id
       })
     });
-    this.reloadData();
   }
 
   onSelectEdit(index: number){

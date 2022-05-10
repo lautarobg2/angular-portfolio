@@ -55,14 +55,12 @@ export class ProyectsComponent implements OnInit {
   onDeleteProyect(proyect:proyects){
     this.AllDataService.onDeleteProyect(proyect)
     .subscribe( 
-      (proyect)=>{
+      ()=>{
       this.proyectsInfo = this.proyectsInfo.filter( (t) => {
         return t.id !== proyect.id
       })
     })
     this.reloadData();
-    this.ngOnInit();
-    window.location.reload();
   }
 
   onSelectEdit(index: number){

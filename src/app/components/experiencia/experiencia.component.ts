@@ -62,12 +62,11 @@ export class ExperienciaComponent implements OnInit {
   onDeleteExperiencia(experiencia:experiencia){
     this.AllDataService.onDeleteExperiencia(experiencia)
     .subscribe( 
-      (experiencia)=>{
+      ()=>{
       this.experienciaInfo = this.experienciaInfo.filter( (t) => {
         return t.id !== experiencia.id
       })
     })
-    this.reloadData();
   }
 
   onSelectEdit(index: number){
