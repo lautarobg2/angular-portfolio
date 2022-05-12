@@ -1,4 +1,4 @@
 export interface acercade {
-    id?: number;
+    id: number;
     description: string;
 }

@@ -18,13 +18,13 @@
           <li *ngFor="let item of educacionInfo; let i = index">
 
             <div id="edu-delete-edit" *ngIf="usuarioLogueado">
-              <a class="betene btn1 hover">
+              <button class="betene btn1 hover">
                 <fa-icon
                   [icon]="faTimes"
                   [ngStyle]="{ color: 'red' }"
                   (click)="onDeleteEducacion(item)"
                 ></fa-icon>
-              </a>
+              </button>
 
               <button class="betene btn1 hover"
               data-bs-toggle="modal"

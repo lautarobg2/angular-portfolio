@@ -48,7 +48,6 @@ export class ProyectsComponent implements OnInit {
     ));
     this.reloadData();
     this.ngOnInit();
-    window.location.reload();
   }
 
 

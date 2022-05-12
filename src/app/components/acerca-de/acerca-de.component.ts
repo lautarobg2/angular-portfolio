@@ -44,7 +44,6 @@ export class AcercaDeComponent implements OnInit {
           this.ngOnInit();
         }
       );
-      console.log(this.aboutSelected);
     }
   
 

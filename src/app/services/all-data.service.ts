@@ -21,12 +21,14 @@ const httpOptions = {
 })
 export class AllDataService {
 
-  apiUrlHeader: string = "https://spring-boot-portfolio.herokuapp.com/header";
-  apiUrlAcercaDe: string = "https://spring-boot-portfolio.herokuapp.com/about";
-  apiUrlEducacion: string = "https://spring-boot-portfolio.herokuapp.com/education";
-  apiUrlExperiencia: string = "https://spring-boot-portfolio.herokuapp.com/experience";
-  apiUrlSkills: string = "https://spring-boot-portfolio.herokuapp.com/skills";
-  apiUrlProyects: string = "https://spring-boot-portfolio.herokuapp.com/proyect";
+  urlMain: string = "http://localhost:8080";
+
+  apiUrlHeader: string = this.urlMain + "/header";
+  apiUrlAcercaDe: string = this.urlMain + "/about";
+  apiUrlEducacion: string = this.urlMain + "/education";
+  apiUrlExperiencia: string = this.urlMain + "/experience";
+  apiUrlSkills: string = this.urlMain + "/skills";
+  apiUrlProyects: string = this.urlMain + "/proyect";
 
 
   constructor( private http: HttpClient) { }
@@ -60,7 +62,7 @@ export class AllDataService {
                       // ACERCA DE 
   
     saveEditAcercaDe(aboutSelected?:acercade):Observable<acercade>{
-    return this.http.put<any>(this.apiUrlAcercaDe + "/update", aboutSelected, httpOptions)
+    return this.http.put<acercade>(this.apiUrlAcercaDe + "/update", aboutSelected, httpOptions)
     }
 
 

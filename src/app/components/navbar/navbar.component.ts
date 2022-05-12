@@ -40,10 +40,10 @@ export class NavbarComponent implements OnInit {
         (response: Boolean) => {
           if (response){
             window.location.reload();
-            window.alert("Sesión iniciada correctamente!");
+            alert("Sesión iniciada correctamente!");
           }
           else{
-            window.alert("El email y/o contraseña son incorrectos!");
+            alert("El email y/o contraseña son incorrectos!");
             this.loginError = true;
           }
         }

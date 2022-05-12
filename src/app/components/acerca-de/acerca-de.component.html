@@ -63,15 +63,16 @@
 
         <h5 class="modal-title" id="exampleModalLabel">Descripción:</h5>
         <div class="input-group">
-          <input
+          <textarea
             type="text"
             name="abouteditinsti"
             id="abouteditinsti"
             class="form-control"
             aria-describedby="basic-addon1"
             *ngIf="aboutSelected"
-            [(ngModel)]="aboutSelected.description"
-          />
+            [(ngModel)]="aboutSelected.description">
+          
+          </textarea>
         </div>
         <br />
       </div>

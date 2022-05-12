@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  headerInfo: any;
+  headerInfo: any = [];
 
   usuarioLogueado: Boolean = false;
 

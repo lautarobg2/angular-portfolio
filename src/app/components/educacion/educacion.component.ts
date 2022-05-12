@@ -70,6 +70,7 @@ export class EducacionComponent implements OnInit {
         return t.id !== educacion.id
       })
     });
+    this.reloadData();
   }
 
   onSelectEdit(index: number){
