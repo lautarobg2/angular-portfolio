@@ -55,11 +55,13 @@ export class ExperienciaComponent implements OnInit {
       this.experienciaInfo.push(experiencia)
     ));
     this.reloadData();
-    this.ngOnInit();
+    alert("¡El item se agregó correctamente!");
   }
 
   
   onDeleteExperiencia(experiencia:experiencia){
+    if(confirm("¿Seguro que quiere borrar el item?")){
+
     this.AllDataService.onDeleteExperiencia(experiencia)
     .subscribe( 
       ()=>{
@@ -68,6 +70,8 @@ export class ExperienciaComponent implements OnInit {
       })
     })
   }
+  this.reloadData();
+}
 
   onSelectEdit(index: number){
     this.expSelected = this.experienciaInfo[index];
@@ -79,6 +83,7 @@ export class ExperienciaComponent implements OnInit {
         this.reloadData();
       }
     );
+    alert("¡La información ha sido actualizada correctamente!");
   }
 
 

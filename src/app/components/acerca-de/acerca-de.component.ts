@@ -44,6 +44,7 @@ export class AcercaDeComponent implements OnInit {
           this.ngOnInit();
         }
       );
+      alert("¡La información ha sido actualizada correctamente!");
     }
   
 

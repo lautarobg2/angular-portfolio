@@ -23,6 +23,7 @@
 
       <div *ngFor="let skill of skillsInfo; let i = index" class="col-6 col-sm-2">
         <div id="sk-delete-edit" *ngIf="usuarioLogueado">
+
           <button class="betene btn1 hover">
             <fa-icon
               [icon]="faTimes"
@@ -30,6 +31,7 @@
               (click)="onDeleteSkill(skill)"
             ></fa-icon>
           </button>
+          
           <button class="betene btn1 hover"
           data-bs-toggle="modal"
           data-bs-target="#skillEditModal"

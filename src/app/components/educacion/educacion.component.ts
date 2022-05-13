@@ -60,18 +60,23 @@ export class EducacionComponent implements OnInit {
     ));
     this.reloadData();
     this.ngOnInit();
+    alert("¡El item se agregó correctamente!");
   }
 
   onDeleteEducacion(educacion:educacion){
+    if(confirm("¿Seguro que quiere borrar el item?")){
+
     this.AllDataService.onDeleteEducacion(educacion)
     .subscribe( 
       ()=>{
       this.educacionInfo = this.educacionInfo.filter( (t) => {
         return t.id !== educacion.id
       })
+      this.reloadData();
     });
-    this.reloadData();
   }
+  this.ngOnInit();
+}
 
   onSelectEdit(index: number){
     this.eduSelected = this.educacionInfo[index];
@@ -83,6 +88,7 @@ export class EducacionComponent implements OnInit {
         this.reloadData();
       }
     );
+    alert("¡La información ha sido actualizada correctamente!");
   }
 
 

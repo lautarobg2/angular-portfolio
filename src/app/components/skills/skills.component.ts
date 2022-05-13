@@ -51,18 +51,24 @@ export class SkillsComponent implements OnInit {
     ));
 this.reloadData();
 this.ngOnInit();
+alert("¡El item se agregó correctamente!");
 }
 
 
   onDeleteSkill(skills:skills){
+    if(confirm("¿Seguro que quiere borrar el item?")){
+
     this.AllDataService.onDeleteSkill(skills)
     .subscribe( 
       ()=>{
       this.skillsInfo = this.skillsInfo.filter( (t) => {
         return t.id !== skills.id
-      })
-    });
-  }
+    })
+    this.reloadData(); 
+  });
+ }
+ this.ngOnInit();
+}
 
   onSelectEdit(index: number){
     this.skSelected = this.skillsInfo[index];
@@ -74,7 +80,7 @@ this.ngOnInit();
         this.reloadData();
       }
     );
-    console.log(this.skillsInfo);
+    alert("¡La información ha sido actualizada correctamente!");
   }
 
 

@@ -47,11 +47,13 @@ export class ProyectsComponent implements OnInit {
       this.proyectsInfo.push(proyect)
     ));
     this.reloadData();
-    this.ngOnInit();
+    alert("¡El item se agregó correctamente!");
   }
 
 
   onDeleteProyect(proyect:proyects){
+    if(confirm("¿Seguro que quiere borrar el item?")){
+
     this.AllDataService.onDeleteProyect(proyect)
     .subscribe( 
       ()=>{
@@ -61,6 +63,7 @@ export class ProyectsComponent implements OnInit {
     })
     this.reloadData();
   }
+}
 
   onSelectEdit(index: number){
     this.proSelected = this.proyectsInfo[index];
@@ -72,6 +75,7 @@ export class ProyectsComponent implements OnInit {
         this.reloadData();
       }
     );
+    alert("¡La información ha sido actualizada correctamente!");
   }
 
 
