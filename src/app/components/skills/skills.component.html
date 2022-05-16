@@ -107,6 +107,10 @@
         <h5 class="modal-title" id="exampleModalLabel">Porcentaje de conocimiento:</h5>
         <br />
         <div class="input-group">
+          <input class="range-bar"  type="range" min="0" max="100"            
+          *ngIf="skSelected" 
+          [(ngModel)]="skSelected.porcentaje">
+
           <input
             type="text"
             name="edueditdescription"
@@ -122,6 +126,11 @@
         <h5 class="modal-title" id="exampleModalLabel">Código de color:</h5>
         <br />
         <div class="input-group">
+
+          <input class="form-control"  type="color" name="color"             
+          *ngIf="skSelected" 
+          [(ngModel)]="skSelected.outerStrokeColor">
+
           <input
             type="text"
             name="eduedittime"
@@ -199,8 +208,11 @@
           </h5>
           <br />
           <div class="input-group">
+             
+            <input class="range-bar"  type="range" min="0" max="100" [(ngModel)]="newSK.porcentaje" [(ngModel)]="newSK.title"
+            >
+            
             <input
-              placeholder='Solo en valor numérico. Ejemplo: "80"'
               type="text"
               name="description"
               id="description"
@@ -216,6 +228,7 @@
           </h5>
           <br />
           <div class="input-group">
+            <input class="form-control"  type="color" name="color" [(ngModel)]="newSK.outerStrokeColor">
             <input
              placeholder='Ejemplo: "red" o "#F265A9"'
               type="text"

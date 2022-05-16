@@ -58,8 +58,6 @@ export class EducacionComponent implements OnInit {
       (educacion) => (
       this.educacionInfo.push(educacion)
     ));
-    this.reloadData();
-    this.ngOnInit();
     alert("¡El item se agregó correctamente!");
   }
 
@@ -72,10 +70,8 @@ export class EducacionComponent implements OnInit {
       this.educacionInfo = this.educacionInfo.filter( (t) => {
         return t.id !== educacion.id
       })
-      this.reloadData();
     });
   }
-  this.ngOnInit();
 }
 
   onSelectEdit(index: number){

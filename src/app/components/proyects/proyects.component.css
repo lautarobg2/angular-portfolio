@@ -22,10 +22,7 @@
 
 #proy-delete-edit{
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    top: 5px;
-    right: 5px;
+    margin: auto;
 }
 #proy-delete-edit button{
     margin-right: 8px;

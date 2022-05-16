@@ -49,8 +49,6 @@ export class SkillsComponent implements OnInit {
       (skills) => (
       this.skillsInfo.push(skills)
     ));
-this.reloadData();
-this.ngOnInit();
 alert("¡El item se agregó correctamente!");
 }
 
@@ -64,10 +62,8 @@ alert("¡El item se agregó correctamente!");
       this.skillsInfo = this.skillsInfo.filter( (t) => {
         return t.id !== skills.id
     })
-    this.reloadData(); 
   });
  }
- this.ngOnInit();
 }
 
   onSelectEdit(index: number){

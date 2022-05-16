@@ -38,11 +38,11 @@
         </button>
       </div>
 
-      <img [src]="proyect.img" class="card-img-top" alt="..." style=" width: 20em">
+      <img [src]="proyect.img" class="card-img-top" alt="..." style=" width: 25em">
       <div class="card-body">
         <h5 class="card-title">{{proyect.title}}</h5>
         <p class="card-text">{{proyect.description}}</p>
-        <a href="#" class="btn btn-primary">Échale un vistazo!</a>
+        <a [href]="proyect.link" class="btn btn-primary">Échale un vistazo!</a>
       </div>
     </div>
   </div>
@@ -222,3 +222,5 @@
     </div>
   </div>
 </div>
+
+

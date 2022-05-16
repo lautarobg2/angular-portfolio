@@ -18,6 +18,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { ProyectsComponent } from './components/proyects/proyects.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { RouterModule, Routes } from '@angular/router';
     SkillsComponent,
     ContactFormComponent,
     ProyectsComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

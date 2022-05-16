@@ -46,7 +46,6 @@ export class ProyectsComponent implements OnInit {
       (proyect) => (
       this.proyectsInfo.push(proyect)
     ));
-    this.reloadData();
     alert("¡El item se agregó correctamente!");
   }
 
@@ -61,7 +60,6 @@ export class ProyectsComponent implements OnInit {
         return t.id !== proyect.id
       })
     })
-    this.reloadData();
   }
 }
 

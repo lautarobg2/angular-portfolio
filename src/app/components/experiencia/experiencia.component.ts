@@ -54,7 +54,6 @@ export class ExperienciaComponent implements OnInit {
       (experiencia) => (
       this.experienciaInfo.push(experiencia)
     ));
-    this.reloadData();
     alert("¡El item se agregó correctamente!");
   }
 
@@ -70,7 +69,6 @@ export class ExperienciaComponent implements OnInit {
       })
     })
   }
-  this.reloadData();
 }
 
   onSelectEdit(index: number){
