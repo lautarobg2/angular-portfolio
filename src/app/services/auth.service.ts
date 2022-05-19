@@ -11,7 +11,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   public login(credentials:LoginDto) : Observable<Boolean> {
-    return this.http.post<Boolean>("http://localhost:8080/login", credentials).pipe(
+    return this.http.post<Boolean>("https://spring-boot-portfolio.herokuapp.com/login", credentials).pipe(
       tap((response: Boolean) => {
         if (response)
           sessionStorage.setItem("isUserLogged", "lautaro");

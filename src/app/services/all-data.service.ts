@@ -21,7 +21,7 @@ const httpOptions = {
 })
 export class AllDataService {
 
-  urlMain: string = "http://localhost:8080";
+  urlMain: string = "https://spring-boot-portfolio.herokuapp.com";
 
   apiUrlHeader: string = this.urlMain + "/header";
   apiUrlAcercaDe: string = this.urlMain + "/about";
