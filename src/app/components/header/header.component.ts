@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AllDataService } from 'src/app/services/all-data.service';
 import { header } from 'src/app/data/header-interface';
 import { AuthService } from 'src/app/services/auth.service';
+import { preData } from 'src/app/mocks/mockPreData';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  headerInfo: any = [];
+  headerInfo: header = preData;
 
   usuarioLogueado: Boolean = false;
 
